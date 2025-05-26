@@ -464,3 +464,549 @@ for i in range(2, n+1):
 
 * Question 13: Printed every prime number between 2 and the user’s limit `n`.
 
+## Lab 3
+
+### Topic: Function Definition & Return Values
+
+**Explanation:**
+Functions in Python are defined using the `def` keyword, followed by a name, parameters in parentheses, and a colon. Inside the function, use `return` to send a value back to the caller. If no `return` is given, the function returns `None`.
+
+**Example:**
+
+```python
+def add_numbers(a, b):
+    return a + b
+
+x, y = input("Enter two numbers: ").split(", ")
+print("Sum: ", add_numbers(int(x), int(y)))
+```
+
+**Questions I have done on that topic:**
+
+* Question 1: Defined `add_numbers(a, b)` to return the sum of two integers read from input.
+
+---
+
+### Topic: Conditional Logic in Functions
+
+**Explanation:**
+Functions can contain conditional statements to execute different logic paths. A simple `if–else` inside a function can return different results based on input.
+
+**Example:**
+
+```python
+def even_odd(num):
+    if num % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+n = int(input("Enter a number: "))
+print("The number is", even_odd(n))
+```
+
+**Questions I have done on that topic:**
+
+* Question 2: Wrote `even_odd(num)` to classify an integer as "even" or "odd".
+
+---
+
+### Topic: Recursive Functions
+
+**Explanation:**
+A recursive function calls itself with a modified argument until a base case is met. Careful base-case definition prevents infinite recursion.
+
+**Example:**
+
+```python
+def find_factorial(num):
+    if num == 1:
+        return 1
+    return num * find_factorial(num - 1)
+
+n = int(input("Enter number: "))
+print(f"The factorial is: {find_factorial(n)}")
+```
+
+**Questions I have done on that topic:**
+
+* Question 3: Implemented `find_factorial(num)` recursively to compute the factorial of `n`.
+
+---
+
+### Topic: Finding the Maximum of Three Values
+
+**Explanation:**
+Use a combination of `if–elif–else` and logical comparisons (`>`) to compare three values and return the largest.
+
+**Example:**
+
+```python
+def find_max(a, b, c):
+    if a > b and a > c:
+        return a
+    elif b > a and b > c:
+        return b
+    else:
+        return c
+
+print(f"Largest number is: {find_max(5, 6, 7)}")
+```
+
+**Questions I have done on that topic:**
+
+* Question 4: Created `find_max(a, b, c)` to return the largest of three hard-coded values.
+
+---
+
+### Topic: Built-in List Functions (`len`, `sum`, `type`)
+
+**Explanation:**
+Python provides built-in functions for common list operations:
+
+* `len(list)` returns the number of elements.
+* `sum(list)` returns the sum of numeric elements.
+* `type(value)` returns the data type of `value`.
+
+**Example:**
+
+```python
+my_list = [10, 20, 30]
+print("Length: ", len(my_list))
+print("Sum: ", sum(my_list))
+print("Type of sum: ", type(sum(my_list)))
+```
+
+**Questions I have done on that topic:**
+
+* Question 5: Demonstrated use of `len()`, `sum()`, and `type()` on a sample list.
+
+---
+
+### Topic: Calculating Average of a List
+
+**Explanation:**
+Compute the average by dividing the sum of elements by the length of the list. You can write a reusable function that takes a list argument.
+
+**Example 1:**
+
+```python
+def find_average(numbers):
+    return sum(numbers) / len(numbers)
+
+nums = [10, 20, 30, 40]
+print("Average: ", find_average(nums))
+```
+
+**Example 2 (with `map`):**
+
+```python
+def find_avg(number):
+    return sum(number) / len(number)
+
+num = list(map(int, input("Enter numbers separated by space: ").split(" ")))
+print(f"Average: {find_avg(num)}")
+```
+
+**Questions I have done on that topic:**
+
+* Question 6: Wrote `find_average(numbers)` to compute average of a hard-coded list.
+* Question 7: Used `map(int, …)` to parse user input into a list of integers, then computed average.
+
+---
+
+### Topic: Finding Maximum in a List (Custom vs. Built-in)
+
+**Explanation:**
+You can manually iterate through a list to find the maximum value, or simply call Python’s built-in `max()` function.
+
+**Example:**
+
+```python
+def find_max_in_list(number):
+    max_val = number[0]
+    for num in number:
+        if num > max_val:
+            max_val = num
+    return max_val
+
+def find_max_prebuilt(numbers):
+    return max(numbers)
+
+n = list(map(int, input("Enter numbers separated by space: ").split(" ")))
+print(f"max: {find_max_in_list(n)}")
+print(f"max: {find_max_prebuilt(n)}")
+```
+
+**Questions I have done on that topic:**
+
+* Question 8: Implemented `find_max_in_list(number)` manually.
+* Question 9: Used built-in `max(numbers)` for comparison.
+
+---
+
+### Topic: Counting Even Numbers in a List
+
+**Explanation:**
+Iterate through a list, test each element for evenness (`% 2 == 0`), and maintain a counter that you return at the end.
+
+**Example:**
+
+```python
+def count_even(number):
+    count = 0
+    for num in number:
+        if num % 2 == 0:
+            count += 1
+    return count
+
+num = list(map(int, input("Enter numbers: ").split(" ")))
+print(f"even : {count_even(num)}")
+```
+
+**Questions I have done on that topic:**
+
+* Question 10: Wrote `count_even(number)` to count and return the number of even integers in the user-provided list.
+
+---
+
+### **Topic: List Slicing in Python**
+
+**Explanation:**
+
+List slicing allows you to extract specific portions of a list using the syntax:
+
+```python
+list[start:stop:step]
+```
+
+* **start**: Index where the slice begins (inclusive).
+* **stop**: Index where the slice ends (exclusive).
+* **step**: (Optional) Interval between elements (default is 1).
+
+Negative indices count from the end of the list.
+
+---
+
+###  **Examples and Challenges**
+
+---
+
+####  Basic Slicing Examples
+
+```python
+my_list = [10, 20, 30, 40, 50, 60]
+```
+
+```python
+# First 4 items
+print(my_list[:4])  # [10, 20, 30, 40]
+
+# All except first and last
+print(my_list[1:-1])  # [20, 30, 40, 50]
+
+# Reverse first 3 items
+print(my_list[:3][::-1])  # [30, 20, 10]
+
+# Last 3 items in reverse
+print(my_list[:-4-1:-1])  # [60, 50, 40]
+
+# Every 2nd item from index 1
+print(my_list[1::2])  # [20, 40, 60]
+
+# Copy entire list
+print(my_list[:])  # [10, 20, 30, 40, 50, 60]
+```
+
+---
+
+####  Practice Challenges
+
+1. **Middle section excluding first and last**
+
+```python
+lst = [5, 10, 15, 20, 25, 30]
+print(lst[1:-1])  # [10, 15, 20, 25]
+```
+
+2. **Reverse only first 4 elements**
+
+```python
+lst = [1, 2, 3, 4, 5, 6]
+print(lst[:4][::-1] + lst[4:])  # [4, 3, 2, 1, 5, 6]
+```
+
+3. **Last 4 elements reversed**
+
+```python
+lst = [11, 22, 33, 44, 55, 66, 77]
+print(lst[-1:-5:-1])  # [77, 66, 55, 44]
+```
+
+4. **Every 3rd element starting from index 1**
+
+```python
+lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(lst[1::3])  # [1, 4, 7]
+```
+
+5. **Copy list without last 2 elements**
+
+```python
+lst = [100, 200, 300, 400, 500]
+print(lst[:-2])  # [100, 200, 300]
+```
+
+---
+
+###  Advanced Revision Challenges
+
+1. **First 5 elements reversed**
+
+```python
+lst = [10, 20, 30, 40, 50, 60, 70]
+print(lst[:5][::-1])  # [50, 40, 30, 20, 10]
+```
+
+2. **From index 3 to 6**
+
+```python
+lst = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+print(lst[3:7])  # [3, 4, 5, 6]
+```
+
+3. **Last 5 elements**
+
+```python
+lst = [5, 10, 15, 20, 25, 30, 35, 40]
+print(lst[-5:])  # [20, 25, 30, 35, 40]
+```
+
+4. **Every 3rd from index 2**
+
+```python
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+print(lst[2::3])  # [3, 6, 9]
+```
+
+---
+
+###  Final Slicing Challenge
+
+```python
+lst = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+```
+
+1. **Last 3 elements in reverse**
+
+```python
+print(lst[-1:-4:-1])  # [50, 45, 40]
+```
+
+2. **Skip every other element**
+
+```python
+print(lst[::2])  # [5, 15, 25, 35, 45]
+```
+
+3. **Index 2 to 7 in reverse**
+
+```python
+print(lst[2:8][::-1])  # [40, 35, 30, 25, 20, 15]
+```
+
+4. **Exclude first 2 and last 2**
+
+```python
+print(lst[2:-2])  # [15, 20, 25, 30, 35, 40]
+```
+
+5. **Reverse list and take every 3rd item**
+
+```python
+print(lst[::-1][::3])  # [50, 35, 20, 5]
+```
+
+---
+
+
+### Topic: List Methods (append, insert, remove, sort, reverse)
+
+**Explanation:**
+Python lists provide built-in methods to modify their contents in place:
+
+* `append(item)` adds `item` to the end.
+* `insert(index, item)` places `item` at position `index`.
+* `remove(item)` deletes the first occurrence of `item`.
+* `sort()` arranges elements in ascending order.
+* `reverse()` reverses the list in place.
+
+**Example:**
+
+```python
+lst = [1, 3, 5]
+lst.append(7)        # [1, 3, 5, 7]
+lst.insert(1, 2)     # [1, 2, 3, 5, 7]
+lst.remove(3)        # [1, 2, 5, 7]
+lst.sort()           # [1, 2, 5, 7]
+lst.reverse()        # [7, 5, 2, 1]
+print(lst)           # [7, 5, 2, 1]
+```
+
+**Questions I have done on that topic:**
+
+* Question 1: Used `append()` to add a single element at the end of a list.
+* Question 2: Used `insert()` to place a new element at a specific index.
+* Question 3: Used `remove()` to delete a given element by value.
+* Question 4: Used `sort()` to sort a list of numbers in ascending order.
+* Question 5: Used `reverse()` to reverse the order of a list.
+
+---
+
+### Topic: Counting & Finding Elements (count, index)
+
+**Explanation:**
+
+* `count(item)` returns how many times `item` appears in the list.
+* `index(item)` returns the first index at which `item` appears (raises an error if not found).
+
+**Example:**
+
+```python
+fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+print(fruits.count('apple'))   # 3
+
+colors = ['red', 'blue', 'green', 'blue', 'yellow']
+print(colors.index('blue'))    # 1
+```
+
+**Questions I have done on that topic:**
+
+* Question 1: Counted occurrences of `'apple'` in a list of fruit names.
+* Question 2: Found the index of the first `'blue'` in a list of colors.
+
+---
+
+### Topic: Copying Lists (shallow vs. deep)
+
+**Explanation:**
+
+* `list.copy()` creates a shallow copy: a new list object, but nested objects remain shared.
+* `copy.deepcopy()` (from the `copy` module) creates a full deep copy: all levels duplicated.
+
+**Example:**
+
+```python
+import copy
+
+# Shallow copy of flat list
+numbers = [5, 10, 15]
+copy_numbers = numbers.copy()
+copy_numbers.append(44)
+# numbers remains [5, 10, 15], copy_numbers is [5, 10, 15, 44]
+
+# Deep copy of nested list
+original = [[1, 2], [3, 4]]
+deep_copy = copy.deepcopy(original)
+deep_copy[0].append(99)
+# original stays [[1, 2], [3, 4]]
+# deep_copy is [[1, 2, 99], [3, 4]]
+```
+
+**Questions I have done on that topic:**
+
+* Question 1: Created a shallow copy of a simple list and showed modifications don’t affect the original.
+* Question 2: Created a deep copy of a nested list and demonstrated independence from the original.
+
+---
+
+### Topic: Removing & Extending Lists (pop, extend)
+
+**Explanation:**
+
+* `pop()` removes and returns the last element (or at a given index if provided).
+* `extend(iterable)` appends all elements from `iterable` to the end of the list.
+
+**Example:**
+
+```python
+lst = [10, 20, 30, 40]
+x = lst.pop()           # x = 40, lst = [10, 20, 30]
+lst.extend([20, 25])    # lst = [10, 20, 30, 20, 25]
+print(x, lst)
+```
+
+**Questions I have done on that topic:**
+
+* Question 1: Used `pop()` to remove and capture the last element of a list.
+* Question 2: Used `extend()` to add multiple new items onto a list.
+
+---
+
+### Topic: Functional Tools (map & filter with `lambda`)
+
+**Explanation:**
+
+* `map(func, iterable)` applies `func` to every item and returns an iterator of results.
+* `filter(func, iterable)` returns an iterator of items for which `func(item)` is `True`.
+* Combine `filter()` and `map()` to first select items, then transform them.
+
+**Example:**
+
+```python
+nums = [2, 3, 4]
+squares     = list(map(lambda x: x*x, nums))         
+evens       = list(filter(lambda x: x % 2 == 0, nums))  
+square_evens = list(map(lambda x: x*x, filter(lambda x: x%2 == 0, nums)))
+print(squares)       # [4, 9, 16]
+print(evens)         # [2, 4]
+print(square_evens)  # [4, 16]
+```
+
+**Questions I have done on that topic:**
+
+* Question 1: Used `map()` with a `lambda` to compute squares of a list of numbers.
+* Question 2: Used `filter()` with a `lambda` to extract even numbers.
+* Question 3: Combined `filter()` and `map()` to square only the even numbers.
+
+---
+
+### Topic: List Comprehensions
+
+**Explanation:**
+List comprehensions provide a concise syntax to build lists:
+
+```python
+[expression for item in iterable if condition]
+```
+
+They can include an `if…else` inside the expression for conditional output.
+
+**Example:**
+
+```python
+# Squares of 1–10
+squared_nums    = [i*i for i in range(1, 11)]
+
+# Words starting with 'a'
+words           = ['apple', 'banana', 'avocado', 'berry', 'apricot']
+starts_with_a   = [w for w in words if w[0] == 'a']
+
+# Even numbers doubled
+nums            = [1, 2, 3, 4, 5, 6]
+multiplied_by_2 = [x*2 for x in nums if x % 2 == 0]
+
+# Label odd/even
+nums            = [7, 2, 5, 8]
+odd_even        = ["even" if x % 2 == 0 else "odd" for x in nums]
+```
+
+**Questions I have done on that topic:**
+
+* Question 1: Generated a list of squares using a comprehension.
+* Question 2: Filtered a list of strings to those starting with `'a'`.
+* Question 3: Created a list of doubled values only for even numbers.
+* Question 4: Used a conditional expression inside a comprehension to label each number `"even"` or `"odd"`.
+
+
+
