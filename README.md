@@ -1,6 +1,9 @@
 # **📚 learningPython**
 
-## **🧪 Lab 1**
+<details>
+ <summary>
+ 🧪 Lab 1
+ </summary>
 
 ### **💡 Topic:** Basic Input/Output & f-strings
 
@@ -168,8 +171,12 @@ You can perform compound arithmetic expressions to compute percentages and avera
 * Question 8: Computed average of three marks and used a conditional to print pass/fail.
 
 ---
+</details>
 
-## **🎮 Lab 2**
+<details>
+ <summary>
+🎮 Lab 2
+</summary>
 
 ### **🎲 Topic:** Random Number Guessing Game
 
@@ -460,7 +467,11 @@ List all primes ≤ `n` by testing each candidate `i` using the same sieve-like 
 
 * Question 13: Printed every prime number between 2 and the user’s limit `n`.
 
-## **🛠️ Lab 3**
+</details>
+<details>
+ <summary>
+🛠️ Lab 3
+</summary>
 
 ### **⚙️ Topic:** Function Definition & Return Values
 
@@ -1003,3 +1014,4 @@ They can include an `if…else` inside the expression for conditional output.
 * Question 2: Filtered a list of strings to those starting with `'a'`.
 * Question 3: Created a list of doubled values only for even numbers.
 * Question 4: Used a conditional expression inside a comprehension to label each number `"even"` or `"odd"`.
+</details>
