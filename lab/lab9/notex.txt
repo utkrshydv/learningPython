@@ -1,0 +1,118 @@
+Plain HTML	<link href="style.css" rel="stylesheet">	Simple static link
+
+
+Flask (Jinja)	<link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet">	Dynamically generated URL for safety & portability
+
+🔹 {{ ... }}
+This is Jinja2 syntax (Flask's templating engine). It means:
+"Evaluate this Python expression and inject the result into the HTML."
+
+🔹 url_for('static', filename='styles/style.css')
+This tells Flask:
+➡️ "Please generate the correct URL for the static file located at static/styles/style.css."
+
+
+we are importing os to getenv api key
+
+
+
+flask built in server vs waitress
+
+Good for learning/dev only
+ vs Production-grade web server
+Slower and not secure	vs Faster,stable, and secure
+
+Starts with app.run()	vs Starts with waitress.serve()
+
+
+Awesome question — you're diving into one of the most powerful and flexible parts of Python: **string formatting with f-strings**.
+
+Here’s a breakdown of **what you can do after `:` inside an f-string**, with examples:
+
+---
+
+## 🎯 Most Common Format Options
+
+### 🔸 Decimal Places (Floating-Point Numbers)
+
+```python
+f"{3.14159:.2f}"   # ➜ '3.14'   → 2 digits after decimal
+f"{3.14159:.0f}"   # ➜ '3'      → rounded, no decimal
+```
+
+### 🔸 Width and Alignment
+
+```python
+f"{'hi':>10}"      # ➜ '        hi'  → right-aligned in 10 spaces
+f"{'hi':<10}"      # ➜ 'hi        '  → left-aligned
+f"{'hi':^10}"      # ➜ '    hi    '  → centered
+```
+
+### 🔸 Padding with Zeros or Characters
+
+```python
+f"{7:03}"          # ➜ '007'    → pad with zeros to make width 3
+f"{42:*^10}"       # ➜ '****42****'  → center with '*'
+```
+
+### 🔸 Percentages
+
+```python
+f"{0.678:.1%}"     # ➜ '67.8%'  → convert float to percentage
+```
+
+### 🔸 Thousands Separator
+
+```python
+f"{1234567:,}"     # ➜ '1,234,567'  → add commas
+f"{1234567:_}"     # ➜ '1_234_567'  → use underscores
+```
+
+### 🔸 Hex, Octal, Binary (Integers)
+
+```python
+f"{255:x}"         # ➜ 'ff'     → hex (lowercase)
+f"{255:X}"         # ➜ 'FF'     → hex (UPPERCASE)
+f"{255:o}"         # ➜ '377'    → octal
+f"{255:b}"         # ➜ '11111111' → binary
+```
+
+### 🔸 Scientific Notation
+
+```python
+f"{12345.6789:.2e}"  # ➜ '1.23e+04'
+```
+
+---
+
+## 🧪 Summary Table
+
+| Format  | Meaning                   | Example Output  |
+| ------- | ------------------------- | --------------- |
+| `.2f`   | 2 decimal places          | `'3.14'`        |
+| `:>10`  | Right-align in 10 spaces  | `'     hello'`  |
+| `:<10`  | Left-align                | `'hello     '`  |
+| `:^10`  | Center-align              | `'  hello   '`  |
+| `:,`    | Comma separator           | `'1,000'`       |
+| `:_`    | Underscore separator      | `'1_000'`       |
+| `.1%`   | Percentage format         | `'25.0%'`       |
+| `b`     | Binary                    | `'1010'`        |
+| `x / X` | Hexadecimal (lower/upper) | `'ff'` / `'FF'` |
+| `.2e`   | Scientific notation       | `'1.23e+04'`    |
+
+---
+
+## 🤯 Tip: Combine Formatting
+
+You can do this:
+
+```python
+f"{1234.56789:>10,.2f}"  # ➜ '  1,234.57'
+```
+
+* `>10` = right-align to 10 spaces
+* `,.2f` = comma + 2 decimal places
+
+---
+
+Let me know what kind of values you're formatting (text, money, data?), and I can suggest the best options for your case!
