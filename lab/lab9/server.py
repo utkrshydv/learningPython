@@ -15,6 +15,12 @@ def index():
 def get_weather():
     city = request.args.get('city')
     weather_data = get_current_weather(city or "kolkata")
+
+    if not weather_data:
+        return render_template(
+            "city_not_found.html"
+        )
+    
     return render_template(
         "weather.html",
         title=weather_data['name'],
