@@ -1,0 +1,49 @@
+import <module name>
+eg: import math
+
+from <module name> import <name>
+
+eg: from os import path
+
+math module in python
+
+eg: 
+import math as m
+print(m.sqrt(64))
+
+m.ceil()
+m.floor()
+m.pow(m. n) //m^n
+m.fabs() //absolute value as float
+m.factorial()
+m.cos()
+m.sine()
+m.tan()
+
+m.sine(m.radians()) //to get value in radians
+
+m.log()
+
+statistics module
+
+import statistics as st
+
+st.mean()
+st.median()
+st.mode()
+st.stdev()   //std deviation
+
+random module
+
+import random as rd
+
+rd.random() //random number between 0 and 1
+
+rd.randint(x, y) //random values between x and y (both inclusive)
+
+rd.choice(mylist) //a random value from a given string, tupple, list, sequence etc
+
+rd.randrange(a, b, step) //step -> increment
+for eg : randrange(5, 10, 2)
+values can be 5, 7, 9
+
