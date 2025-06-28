@@ -2551,3 +2551,259 @@ python-dotenv
 
 
 </details>
+
+<details>
+ <summary>🌤️ Lab 9</summary>
+
+### 🌤️ Topic: Weather API Web App using Flask
+---
+
+### 🧩 Concepts Used
+
+#### 📦 `requests`
+
+Used to make HTTP requests to external APIs (like OpenWeatherMap) and handle responses in JSON format.
+
+#### 🔐 `dotenv`
+
+Used to load sensitive API keys from a `.env` file to avoid hardcoding them into the source code.
+
+```python
+from dotenv import load_dotenv
+load_dotenv()
+```
+
+#### 🗝️ `os.getenv()`
+
+Access environment variables securely using Python's `os` module.
+
+```python
+os.getenv("API_KEY")
+```
+
+#### 🌐 Flask
+
+Flask is a lightweight web framework for building web applications in Python.
+
+| Feature              | Description                                    |
+| -------------------- | ---------------------------------------------- |
+| `Flask`              | Main web framework                             |
+| `render_template()`  | Renders HTML templates using Jinja2 templating |
+| `@app.route()`       | Creates URL routes (like `/`, `/weather`)      |
+| `request.args.get()` | Gets query parameters from the URL             |
+
+#### ⚙️ Waitress
+
+Production-ready WSGI server used to serve Flask applications more reliably than the default dev server.
+
+```python
+from waitress import serve
+serve(app, host="0.0.0.0", port=8000)
+```
+
+#### 📁 `templates/` & `static/`
+
+* HTML files are stored in the `templates` folder.
+* CSS and images are in the `static` folder.
+* Flask uses **Jinja2** syntax in HTML files (`{{ ... }}`) to inject dynamic data.
+
+---
+
+### 🧪 Example 1: `weather.py` - API Integration
+
+```python
+from dotenv import load_dotenv
+from pprint import pprint
+import requests
+import os
+
+load_dotenv()
+
+def get_current_weather(city="kolkata"):
+    if not bool(city.strip()):
+        city = "kolkata"
+
+    request_url = f'https://api.openweathermap.org/data/2.5/weather?appid={os.getenv("API_KEY")}&q={city}&units=metric'
+
+    weather_data = requests.get(request_url).json()
+    if weather_data['cod'] == 200:
+        return weather_data
+    else:
+        return False
+```
+
+**Explanation:**
+
+* Loads environment variables using `dotenv`
+* Sends an HTTP request to the OpenWeatherMap API
+* Returns weather data as a dictionary if the city is valid, else returns `False`
+
+**Sample Output:**
+
+```
+{'name': 'Kolkata', 'main': {'temp': 32, 'feels_like': 34}, 'weather': [{'description': 'clear sky'}]}
+```
+
+---
+
+### 🌐 Example 2: `server.py` - Flask Web Server
+
+```python
+from flask import Flask, render_template, request
+from weather import get_current_weather
+from waitress import serve
+
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+@app.route('/weather')
+def get_weather():
+    city = request.args.get('city')
+    weather_data = get_current_weather(city or "kolkata")
+
+    if not weather_data:
+        return render_template("city_not_found.html")
+
+    return render_template(
+        "weather.html",
+        title=weather_data['name'],
+        status=weather_data["weather"][0]["description"].capitalize(),
+        temp=f"{weather_data['main']['temp']:.1f}",
+        feels_like=f"{weather_data['main']['feels_like']:.1f}"
+    )
+
+if __name__ == "__main__":
+    serve(app, host="0.0.0.0", port=8000)
+```
+
+**Explanation:**
+
+* Sets up routing for the homepage and `/weather`
+* Gets user input from query string and uses it to fetch weather data
+* Displays formatted data in the web page using templates
+* Uses `waitress` to serve the app in production mode
+
+---
+
+### 🧾 Templates
+
+#### 🏠 `index.html`
+
+```html
+<form action="/weather">
+  <input type="text" name="city" placeholder="kolkata" />
+  <button type="submit">Get Weather</button>
+</form>
+```
+
+Displays a form to get the city input from the user.
+
+#### 🌡️ `weather.html`
+
+```html
+<h1>{{ title }} Weather</h1>
+<p>{{ status }} and {{ temp }} °</p>
+<p>Feels like {{ feels_like }} °</p>
+```
+
+Displays weather results dynamically using Jinja2 placeholders.
+
+#### ❌ `city_not_found.html`
+
+```html
+<h1>City not found</h1>
+<h4>Try Again?</h4>
+```
+
+Displays a user-friendly message if the entered city is not found.
+
+---
+
+### 📜 `requirements.txt`
+
+Tracks all required packages for the project:
+
+```
+Flask
+requests
+python-dotenv
+waitress
+```
+
+Use this file to set up the environment:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 🌱 Virtual Environment (venv)
+
+To isolate dependencies:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate     # Windows
+```
+
+---
+
+### 💡 HTML Template Notes
+
+| Mode          | Example                                                                  |
+| ------------- | ------------------------------------------------------------------------ |
+| Plain HTML    | `<link href="style.css" rel="stylesheet">`                               |
+| Flask + Jinja | `<link href="{{ url_for('static', filename='styles/style.css') }}" ...>` |
+
+🔹 `{{ ... }}` - Jinja2 syntax for inserting Python variables into HTML
+🔹 `url_for()` - Safely links to static files like CSS or JS
+
+---
+
+### 🎯 f-String Formatting Options in Python
+
+| Format  | Description               | Example Output  |
+| ------- | ------------------------- | --------------- |
+| `.2f`   | 2 decimal places          | `'3.14'`        |
+| `:>10`  | Right-align in 10 spaces  | `'     hello'`  |
+| `:<10`  | Left-align                | `'hello     '`  |
+| `:^10`  | Center-align              | `'  hello   '`  |
+| `:,`    | Comma separator           | `'1,000'`       |
+| `:_`    | Underscore separator      | `'1_000'`       |
+| `.1%`   | Percentage format         | `'25.0%'`       |
+| `b`     | Binary                    | `'1010'`        |
+| `x / X` | Hexadecimal (lower/upper) | `'ff'` / `'FF'` |
+| `.2e`   | Scientific notation       | `'1.23e+04'`    |
+
+💡 Combine them like:
+
+```python
+f"{1234.56789:>10,.2f}"  # ➜ '  1,234.57'
+```
+
+---
+
+### 🧠 Summary Table
+
+| Concept            | Use Case                                      |
+| ------------------ | --------------------------------------------- |
+| `requests`         | Get data from APIs                            |
+| `.env` & `os`      | Securely store and access API keys            |
+| `Flask`            | Web framework to handle routing and templates |
+| `waitress`         | Production-ready server for Flask apps        |
+| `templates`        | Folder for dynamic HTML rendering (Jinja2)    |
+| `static`           | Folder for CSS/images (linked in templates)   |
+| `f-strings`        | Format strings with precision and style       |
+| `requirements.txt` | Track project dependencies for setup          |
+| `venv`             | Create isolated Python environments           |
+
+---
+
+
+</details>
