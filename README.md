@@ -2,7 +2,8 @@
 
 <details>
  <summary>
- 💡 Lab 1
+
+   ### 💡 Lab 1
  
 - Basic Input/Output & f-strings
 - Type Conversion & Addition
@@ -185,7 +186,8 @@ You can perform compound arithmetic expressions to compute percentages and avera
 
 <details>
  <summary>
-🎮 Lab 2
+  
+## 🎮 Lab 2
 
  - Random Number Guessing Game using while loop
 - Basic While Loops
@@ -496,7 +498,8 @@ List all primes ≤ `n` by testing each candidate `i` using the same sieve-like 
 
 <details>
  <summary>
-🛠️ Lab 3
+  
+## 🛠️ Lab 3
 
  - Function Definition & Return Values  
 - Conditional Logic in Functions  
@@ -1062,7 +1065,9 @@ They can include an `if…else` inside the expression for conditional output.
 
 <details>
 
-<summary>	🧮 Lab 4
+<summary>	
+ 
+ ## 🧮 Lab 4
  
 - Tuples  
 - Tuple Unpacking  
@@ -1344,7 +1349,9 @@ for word in words:
 ---
 
 <details>
-<summary>🧪 Lab 5
+<summary>
+ 
+ ## 🧪 Lab 5
 
 - Object-Oriented Programming (OOP) in Python  
 - Classes and Objects  
@@ -1827,7 +1834,9 @@ class Developer(Employee):
 ---
 
 <details>
-<summary> 🪄Lab 6
+<summary> 
+ 
+ ## 🪄 Lab 6
 
 - Dunder (Magic) Methods in Python  
 - Object Initialization & Representation – `__init__`, `__str__`, `__repr__`
@@ -2173,7 +2182,9 @@ Each dunder method customizes specific behavior and interaction of objects with 
 
 <details>
 
- <summary> 📂 Lab 7
+ <summary>
+  
+  ## 📂 Lab 7
 - File Handling Basics (`open()`, `with`, file modes)
 - Reading Files (`.read()`, `.readline()`, loops)
 - Writing & Appending (`.write()`, `.writelines()`)
@@ -2511,7 +2522,9 @@ print(topper.name)
 
 <details>
 
- <summary> ☁️ Lab 8
+ <summary> 
+  
+  ## ☁️ Lab 8
 
  - APIs & HTTP Requests (`requests`, query parameters, JSON)
 - Using OpenWeatherMap API to fetch live weather
@@ -2676,7 +2689,9 @@ python-dotenv
 ---
 
 <details>
- <summary>🌤️ Lab 9
+ <summary>
+  
+  ## 🌤️ Lab 9
  
  - Flask Web App Structure – `app`, routes, templates, `render_template()`
 - API Integration – using `requests` to fetch weather data
@@ -2946,7 +2961,9 @@ f"{1234.56789:>10,.2f}"  # ➜ '  1,234.57'
 ---
 
 <details>
-<summary>⚙️ Lab 10 
+<summary>
+ 
+ ## ⚙️ Lab 10 
 
 - Generators – `yield`, generator functions, generator expressions
 - Iterators – `__iter__()`, `__next__()`, `StopIteration`
