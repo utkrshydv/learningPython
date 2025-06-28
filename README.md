@@ -2174,9 +2174,6 @@ Each dunder method customizes specific behavior and interaction of objects with 
 <details>
 
  <summary> 📂 Lab 7
-
- ## ✅ Topics Covered – Lab 7
-
 - File Handling Basics (`open()`, `with`, file modes)
 - Reading Files (`.read()`, `.readline()`, loops)
 - Writing & Appending (`.write()`, `.writelines()`)
