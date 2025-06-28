@@ -2,7 +2,7 @@
 
 <details>
  <summary>
- 🧪 Lab 1
+ 💡 Lab 1
  </summary>
 
 ### **💡 Topic:** Basic Input/Output & f-strings
@@ -1018,7 +1018,7 @@ They can include an `if…else` inside the expression for conditional output.
 
 <details>
 
-<summary>✅ Lab 4</summary> 
+<summary>	🧮 Lab 4</summary> 
 
 ### 🧵 Topic: **Tuples**
 
@@ -2804,6 +2804,255 @@ f"{1234.56789:>10,.2f}"  # ➜ '  1,234.57'
 | `venv`             | Create isolated Python environments           |
 
 ---
+
+
+</details>
+
+<details>
+<summary>⚙️ Lab 10 </summary> 
+
+### ⚙️ Topic: Generators, Iterators, Modules, *args, \*\*kwargs, Decorators
+
+---
+
+### 🔄 Generators
+
+Generators are special functions that **return one item at a time** using the `yield` keyword. They don’t store all values in memory, which makes them great for large datasets.
+
+#### 🔹 Example: Simple Generator
+
+```python
+def my_generator():
+    for i in range(5):
+        yield i
+
+# Create generator object
+gen = my_generator()
+print(next(gen))  # 0
+print(next(gen))  # 1
+print(next(gen))  # 2
+
+for j in gen:
+    print(j)  # 3, 4
+```
+
+**Explanation:**
+
+* `yield` works like `return`, but **pauses the function** and **remembers where it left off**.
+* `next()` is used to manually get the next value.
+* The `for` loop continues from the last yield.
+
+---
+
+#### 🔹 Example: Custom Count Generator
+
+```python
+def count_upto(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+for num in count_upto(10):
+    print(num)
+```
+
+**Explanation:**
+
+* This generator yields numbers from 1 to `n`, one at a time.
+
+---
+
+#### 🔹 Example: Generator Expression
+
+```python
+squares = (x*x for x in range(5))
+print(squares)  # <generator object>
+
+for sq in squares:
+    print(sq)
+```
+
+**Explanation:**
+
+* Like list comprehensions, but with `()`.
+* Values are computed **lazily** when needed.
+
+---
+
+### 🔁 Iterators
+
+Iterators are objects that support the **iterator protocol**: they must have `__iter__()` and `__next__()` methods.
+
+#### 🔹 Example: Custom Iterator for Even Numbers
+
+```python
+class EvenNumbers:
+    def __init__(self, limit):
+        self.limit = limit
+        self.current = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current <= self.limit:
+            num = self.current
+            self.current += 2
+            return num
+        else:
+            raise StopIteration
+
+for i in EvenNumbers(10):
+    print(i)
+```
+
+**Explanation:**
+
+* `__next__()` returns the next even number.
+* When limit is exceeded, `StopIteration` is raised to end the loop.
+
+---
+
+### 📦 Modules and Import Styles
+
+Python allows code reuse using modules.
+
+```python
+import math
+print(math.sqrt(64))
+
+from os import path
+```
+
+#### 🔹 Common `math` module functions:
+
+* `ceil(x)` – round up
+* `floor(x)` – round down
+* `pow(x, y)` – x to the power y
+* `fabs(x)` – absolute value (as float)
+* `factorial(x)`
+* Trigonometric: `cos()`, `sin()`, `tan()`
+* `log(x)` – natural log
+* `radians(x)` – convert degrees to radians
+
+#### 🔹 `statistics` module:
+
+```python
+import statistics as st
+st.mean(), st.median(), st.mode(), st.stdev()
+```
+
+Useful for basic statistical analysis.
+
+#### 🔹 `random` module:
+
+```python
+import random as rd
+rd.random()         # Random float (0 to 1)
+rd.randint(1, 10)   # Random integer from 1 to 10
+rd.choice(mylist)  # Random item from list/tuple
+rd.randrange(5, 10, 2)  # Random from 5, 7, 9
+```
+
+---
+
+### 🔗 \*args and \*\*kwargs
+
+These allow you to pass **variable numbers of arguments** to a function.
+
+```python
+def shipping_label(*args, **kwargs):
+    for arg in args:
+        print(arg, end=" ")
+    print()
+
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+shipping_label("Dr", "Spongebob", street="123 Fake St")
+```
+
+**Explanation:**
+
+* `*args` is a **tuple** of positional arguments.
+* `**kwargs` is a **dictionary** of keyword arguments.
+
+#### 🔹 Example:
+
+```python
+def hello(*args, **kwargs):
+    print(args)      # ('utkarsh', 'yadav')
+    print(kwargs)    # {'age': 21, 'dob': 2004}
+
+hello("utkarsh", "yadav", age=21, dob=2004)
+```
+
+---
+
+### 🎭 Decorators
+
+A decorator is a function that **wraps another function** to add new behavior.
+
+#### 🔹 Basic Decorator Example
+
+```python
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print("Started")
+        result = func(*args, **kwargs)
+        print("Ended")
+        return result
+    return wrapper
+
+@logger
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Utkarsh")
+```
+
+**Explanation:**
+
+* `@logger` wraps the `greet` function.
+* Prints messages **before and after** the function call.
+
+#### 🔹 Use Case: Logging Function Calls
+
+```python
+import datetime
+
+def log(func):
+    def wrapper(*args, **kwargs):
+        with open("log.txt", "a") as f:
+            f.write("Called function with " + " ".join(map(str, args)) +
+                    " at " + str(datetime.datetime.now()) + "\n")
+        return func(*args, **kwargs)
+    return wrapper
+
+@log
+def run(a, b, c=9):
+    print(a + b + c)
+
+run(1, 3)
+```
+
+**Explanation:**
+
+* Writes the arguments and timestamp to `log.txt` each time `run()` is called.
+
+---
+
+### 🧠 Summary Table
+
+| Topic                    | Description                            |
+| ------------------------ | -------------------------------------- |
+| `yield`                  | Returns a value & pauses the generator |
+| `__iter__`, `__next__`   | Needed to build custom iterators       |
+| `*args`                  | Accept multiple positional arguments   |
+| `**kwargs`               | Accept multiple keyword arguments      |
+| `decorators`             | Add behavior around existing functions |
+| `math/statistics/random` | Useful built-in Python modules         |
 
 
 </details>
