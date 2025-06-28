@@ -1738,5 +1738,340 @@ class Developer(Employee):
 
 </details>
 
+<details>
+<summary> 🪄Lab 6</summary>
+
+### 🧵 Topic: Dunder (Magic) Methods in Python
+
+**Explanation:**
+Dunder methods (short for "double underscore") are special methods in Python that let you override or extend default behavior for built-in operations like printing, comparing, indexing, adding, calling, etc. These methods start and end with double underscores (e.g., `__init__`, `__str__`, `__add__`).
+
+| Dunder Method  | Purpose                                       |
+| -------------- | --------------------------------------------- |
+| `__init__`     | Constructor, initializes object properties    |
+| `__str__`      | Defines output for `print(obj)` or `str(obj)` |
+| `__repr__`     | Official representation for debugging         |
+| `__eq__`       | Custom logic for equality `==`                |
+| `__add__`      | Defines behavior for `+` operator             |
+| `__len__`      | Defines behavior for `len(obj)`               |
+| `__lt__`       | Defines behavior for `<` operator             |
+| `__getitem__`  | Enables indexing like `obj[i]`                |
+| `__setitem__`  | Allows assignment like `obj[i] = x`           |
+| `__contains__` | Used by `in` keyword                          |
+| `__call__`     | Allows objects to be called like functions    |
+
+---
+
+### 📘 `__str__` - String Representation for Users
+
+```python
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f'"{self.title}" by {self.author}'
+
+b1 = Book("1984", "George Orwell")
+print(b1)
+```
+
+**Explanation:**
+`__str__` returns a user-friendly string when the object is printed.
+
+**Output:**
+
+```
+"1984" by George Orwell
+```
+
+---
+
+### ➕ `__add__` - Overloading `+` Operator
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __str__(self):
+        return f'Point({self.x}, {self.y})'
+
+p1 = Point(2, 3)
+p2 = Point(4, 5)
+print(p1 + p2)
+```
+
+**Explanation:**
+`__add__` defines how `+` works for two objects. Returns a new Point.
+
+**Output:**
+
+```
+Point(6, 8)
+```
+
+---
+
+### 🤝 `__eq__` - Overloading `==` Operator
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __eq__(self, other):
+        return self.name.lower() == other.name.lower()
+
+p1 = Person("Alice")
+p2 = Person("alice")
+print(p1 == p2)
+```
+
+**Explanation:**
+`__eq__` defines how equality is checked. Here, case-insensitive name match.
+
+**Output:**
+
+```
+True
+```
+
+---
+
+### 💸 `__add__` - Wallets Sum Up
+
+```python
+class Wallet:
+    def __init__(self, amount):
+        self.amount = amount
+
+    def __add__(self, other):
+        return Wallet(self.amount + other.amount)
+
+    def __str__(self):
+        return f'{self.amount}'
+
+w1 = Wallet(50)
+w2 = Wallet(100)
+w3 = w1 + w2
+print(w3)
+```
+
+**Explanation:**
+Adds the amounts in two wallets and returns a new Wallet.
+
+**Output:**
+
+```
+150
+```
+
+---
+
+### 📦 `__lt__` - Less Than Comparison
+
+```python
+class Box:
+    def __init__(self, x, y, z):
+        self.volume = x * y * z
+
+    def __lt__(self, other):
+        return self.volume < other.volume
+
+b1 = Box(3, 3, 3)
+b2 = Box(2, 3, 4)
+print(b1 < b2)
+print(b2 < b1)
+```
+
+**Explanation:**
+`__lt__` defines `<` behavior. Compares volumes of the boxes.
+
+**Output:**
+
+```
+False
+True
+```
+
+---
+
+### 📓 `__getitem__` - Indexing Support
+
+```python
+class Notebook:
+    def __init__(self):
+        self.notes = []
+
+    def add_note(self, title):
+        self.notes.append(title)
+
+    def __getitem__(self, index):
+        return self.notes[index]
+
+n = Notebook()
+n.add_note("Buy milk")
+n.add_note("Study OOP")
+print(n[0])
+```
+
+**Explanation:**
+Allows indexing into custom object like a list.
+
+**Output:**
+
+```
+Buy milk
+```
+
+---
+
+### 🎒 `__contains__` - `in` Operator
+
+```python
+class Inventory:
+    def __init__(self):
+        self.items = []
+
+    def add(self, item):
+        self.items.append(item)
+
+    def __contains__(self, item):
+        return item in self.items
+
+inv = Inventory()
+inv.add("sword")
+print("sword" in inv)
+```
+
+**Explanation:**
+Enables `in` operator for the custom class.
+
+**Output:**
+
+```
+True
+```
+
+---
+
+### 🧾 `__setitem__` + `__getitem__` - Dict-like Behavior
+
+```python
+class Scoreboard:
+    def __init__(self):
+        self.scores = {}
+
+    def __setitem__(self, player, score):
+        self.scores[player] = score
+
+    def __getitem__(self, player):
+        return self.scores[player]
+
+sb = Scoreboard()
+sb["Alice"] = 100
+print(sb["Alice"])
+```
+
+**Explanation:**
+Allows dictionary-style assignment and access.
+
+**Output:**
+
+```
+100
+```
+
+---
+
+### 📞 `__call__` - Make Object Callable
+
+```python
+class Greeter:
+    def __init__(self, greeting):
+        self.greeting = greeting
+
+    def __call__(self, name):
+        print(f"{self.greeting}, {name}!")
+
+j = Greeter("Hello")
+j("Utkarsh")
+```
+
+**Explanation:**
+Allows object to be used like a function call.
+
+**Output:**
+
+```
+Hello, Utkarsh!
+```
+
+---
+
+### 📋 Full Feature Example: Task Manager
+
+```python
+class TaskManager:
+    def __init__(self):
+        self.tasks = {}
+
+    def __setitem__(self, name, description):
+        self.tasks[name] = description
+
+    def __getitem__(self, name):
+        return self.tasks[name]
+
+    def __contains__(self, name):
+        return name in self.tasks
+
+    def __len__(self):
+        return len(self.tasks)
+
+    def __str__(self):
+        return f"task manager : {self.tasks}"
+
+    def __repr__(self):
+        return f"task manager : {self.tasks}"
+
+    def __call__(self):
+        for key in self.tasks:
+            print(f"{key} : {self.tasks[key]}")
+
+tm = TaskManager()
+tm["laundry"] = "Wash clothes"
+tm["study"] = "Python OOP"
+print("laundry" in tm)
+print(tm["study"])
+print(len(tm))
+tm()
+print(tm)
+```
+
+**Explanation:**
+Implements multiple dunder methods to make object behave like a dictionary, function, iterable, etc.
+
+**Output:**
+
+```
+True
+Python OOP
+2
+laundry : Wash clothes
+study : Python OOP
+task manager : {'laundry': 'Wash clothes', 'study': 'Python OOP'}
+```
+
+---
+
+Each dunder method customizes specific behavior and interaction of objects with Python syntax and built-in operations. Understanding and using them allows you to design more intuitive and powerful custom classes.
+</details>
+
 
 
