@@ -2,7 +2,17 @@
 
 <details>
  <summary>
- 🧪 Lab 1
+
+   ### 💡 Lab 1
+ 
+- Basic Input/Output & f-strings
+- Type Conversion & Addition
+- Arithmetic Operators
+- String Splitting & Multiple Assignment
+- Converting & Concatenating Numeric Strings
+- Conditional Statements
+- Calculating Percentage & Average
+
  </summary>
 
 ### **💡 Topic:** Basic Input/Output & f-strings
@@ -170,12 +180,27 @@ You can perform compound arithmetic expressions to compute percentages and avera
 * Question 7: Calculated percentage from three subject marks.
 * Question 8: Computed average of three marks and used a conditional to print pass/fail.
 
----
 </details>
+
+---
 
 <details>
  <summary>
-🎮 Lab 2
+  
+## 🎮 Lab 2
+
+ - Random Number Guessing Game using while loop
+- Basic While Loops
+- Conditional Statements (if–elif–else)
+- Finding the Largest of Three Numbers
+- Grade Classification with if–elif Ladder
+- For Loops & Even Number Check
+- Summing Digits of a Number
+- Loop Control Statements (continue & break)
+- FizzBuzz Implementation
+- Multiplication Table
+- Prime Number Checking
+- Prime Number Generation up to N
 </summary>
 
 ### **🎲 Topic:** Random Number Guessing Game
@@ -468,9 +493,29 @@ List all primes ≤ `n` by testing each candidate `i` using the same sieve-like 
 * Question 13: Printed every prime number between 2 and the user’s limit `n`.
 
 </details>
+
+---
+
 <details>
  <summary>
-🛠️ Lab 3
+  
+## 🛠️ Lab 3
+
+ - Function Definition & Return Values  
+- Conditional Logic in Functions  
+- Recursive Functions  
+- Finding the Maximum of Three Values  
+- Built-in List Functions (len, sum, type)  
+- Calculating Average of a List  
+- Finding Maximum in a List (Custom vs. Built-in)  
+- Counting Even Numbers in a List  
+- List Slicing in Python  
+- List Methods (append, insert, remove, sort, reverse)  
+- Counting & Finding Elements (count, index)  
+- Copying Lists (shallow vs. deep)  
+- Removing & Extending Lists (pop, extend)  
+- Functional Tools (map & filter with lambda)  
+- List Comprehensions  
 </summary>
 
 ### **⚙️ Topic:** Function Definition & Return Values
@@ -1014,4 +1059,2161 @@ They can include an `if…else` inside the expression for conditional output.
 * Question 2: Filtered a list of strings to those starting with `'a'`.
 * Question 3: Created a list of doubled values only for even numbers.
 * Question 4: Used a conditional expression inside a comprehension to label each number `"even"` or `"odd"`.
+</details>
+
+---
+
+<details>
+
+<summary>	
+ 
+ ## 🧮 Lab 4
+ 
+- Tuples  
+- Tuple Unpacking  
+- Singleton Tuple  
+- Tuple Slicing  
+- Tuple Methods: count() and index()  
+- Nested Tuples  
+- Sets  
+- Set Operations (Union, Intersection, Difference, Symmetric Difference)  
+- Set from String  
+- Dictionaries  
+- Dictionary Methods: get(), pop(), del  
+- Looping Through a Dictionary  
+- Nested Dictionaries  
+- Real-world Dictionary Use Cases  
+  - Phonebook Lookup  
+  - Inventory Update  
+  - Word Frequency Counter  
+</summary> 
+
+### 🧵 Topic: **Tuples**
+
+**Explanation:**
+A **tuple** is an ordered, immutable collection of elements. This means once a tuple is created, you cannot change, add, or remove elements from it. Tuples are used to group related data together and ensure that the grouped data stays constant.
+
+They're defined using parentheses `()` and support indexing, slicing, nesting, and unpacking.
+
+**Example:**
+
+```python
+my_tuple = (1, 2, 3, 4)
+print(my_tuple[1])  # Output: 2
+
+person = ('utkarsh', 21, 'Engineer', 'male')
+name, age, job, gender = person
+print(name, age, job, gender)
+```
+
+---
+
+### 🧵 Topic: **Tuple Unpacking**
+
+**Explanation:**
+Tuple unpacking allows you to assign each item in a tuple to a variable in a single line. The number of variables must match the number of elements in the tuple.
+
+**Example:**
+
+```python
+t2 = ('python', 3.10, True)
+lang, version, is_dynamic = t2
+print(lang)  # python
+```
+
+---
+
+### 🧵 Topic: **Singleton Tuple**
+
+**Explanation:**
+To create a tuple with only one element, you must include a trailing comma. Otherwise, Python treats it as a regular value.
+
+**Example:**
+
+```python
+t3 = (42,)  # This is a tuple
+print(type(t3))  # <class 'tuple'>
+
+not_a_tuple = (42)
+print(type(not_a_tuple))  # <class 'int'>
+```
+
+---
+
+### 🧵 Topic: **Tuple Slicing**
+
+**Explanation:**
+Just like strings and lists, tuples can be sliced to retrieve a portion of elements using the syntax `tuple[start:stop:step]`.
+
+**Example:**
+
+```python
+t = (10, 20, 30, 40, 50)
+print(t[1:4])     # (20, 30, 40)
+print(t[::-1])    # Reverses the tuple
+```
+
+---
+
+### 🧵 Topic: **Tuple Methods: `count()` and `index()`**
+
+**Explanation:**
+
+* `count(x)` → returns the number of times `x` appears in the tuple.
+* `index(x)` → returns the index of the first occurrence of `x`.
+
+**Example:**
+
+```python
+t = (3, 6, 3, 9, 3, 12)
+print(t.count(3))  # 3
+print(t.index(9))  # 3
+```
+
+---
+
+### 🧵 Topic: **Nested Tuples**
+
+**Explanation:**
+Tuples can contain other tuples or complex data types. Access elements using multiple indices.
+
+**Example:**
+
+```python
+person = ("utkarsh", (21, 'M'), ("python", "java"))
+print(person[1][0])  # 21
+print(person[2][1])  # java
+```
+
+---
+
+### 🧵 Topic: **Sets**
+
+**Explanation:**
+A set is an unordered collection of **unique** elements. Sets are used when you want to store distinct values and perform operations like union, intersection, difference, etc.
+
+**Example:**
+
+```python
+nums = {1, 2, 3, 3, 4}
+print(nums)  # {1, 2, 3, 4} – duplicates removed
+```
+
+---
+
+### 🧵 Topic: **Set Operations**
+
+**Explanation:**
+
+* `|` → Union
+* `&` → Intersection
+* `-` → Difference
+* `^` → Symmetric Difference
+
+**Example:**
+
+```python
+a = {1, 2, 3}
+b = {2, 3, 6}
+
+print(a | b)  # {1, 2, 3, 6}
+print(a & b)  # {2, 3}
+print(a - b)  # {1}
+print(a ^ b)  # {1, 6}
+```
+
+---
+
+### 🧵 Topic: **Set from String**
+
+**Explanation:**
+Converting a string to a set helps in extracting unique characters.
+
+**Example:**
+
+```python
+word = "balloon"
+unique_letters = set(word)
+print(unique_letters)  # {'b', 'a', 'l', 'o', 'n'}
+```
+
+---
+
+### 🧵 Topic: **Dictionaries**
+
+**Explanation:**
+Dictionaries store data as key-value pairs. Keys are unique, and values can be of any data type. Useful for fast lookups and organizing data meaningfully.
+
+**Example:**
+
+```python
+student = {
+    'name': 'utkarsh',
+    'age': 21,
+    'courses': ['Math', 'Science']
+}
+print(student['name'])  # utkarsh
+```
+
+---
+
+### 🧵 Topic: **Dictionary Methods: `get()`, `pop()`, `del`**
+
+**Explanation:**
+
+* `get(key)` → returns the value or `None` if the key doesn't exist.
+* `pop(key)` → removes and returns the value of the given key.
+* `del` → deletes a key-value pair from the dictionary.
+
+**Example:**
+
+```python
+student.get('email')             # None
+student.pop('grade')             # removes 'grade'
+del student['age']               # removes 'age'
+```
+
+---
+
+### 🧵 Topic: **Looping Through a Dictionary**
+
+**Explanation:**
+You can iterate over keys, values, or both using `keys()`, `values()`, or `items()`.
+
+**Example:**
+
+```python
+for key, value in student.items():
+    print(f"{key} : {value}")
+```
+
+---
+
+### 🧵 Topic: **Nested Dictionaries**
+
+**Explanation:**
+A dictionary can store another dictionary as a value. Useful for structured, grouped data.
+
+**Example:**
+
+```python
+classroom = {
+    'utkarsh': {'age': 21, 'grade': 90},
+    'disha': {'age': 32, 'grade': 100}
+}
+print(classroom['disha']['grade'])  # 100
+```
+
+---
+
+### 🧵 Topic: **Real-world Dictionary Use Cases**
+
+#### 📞 Phonebook Lookup
+
+**Explanation:**
+Get a value from a dictionary safely using `get()` to avoid errors if the key is missing.
+
+**Example:**
+
+```python
+name = input("Enter a name: ")
+print(phonebook.get(name, "Not found"))
+```
+
+#### 🍎 Inventory Update
+
+**Explanation:**
+Simulates real-time item stock updates.
+
+**Example:**
+
+```python
+inventory['banana'] -= 2
+inventory['grapes'] = 15
+```
+
+#### 🔁 Word Frequency Counter
+
+**Explanation:**
+Counts how many times each word appears in a sentence.
+
+**Example:**
+
+```python
+for word in words:
+    word_count[word] = word_count.get(word, 0) + 1
+```
+</details>
+
+
+---
+
+<details>
+<summary>
+ 
+ ## 🧪 Lab 5
+
+- Object-Oriented Programming (OOP) in Python  
+- Classes and Objects  
+- Constructors (__init__)  
+- Instance Methods  
+- Default Parameter Values  
+- Conditional Logic in Methods  
+- Working with Lists Inside Classes  
+- Composition (Object Inside Object)  
+- Encapsulation  
+- Inheritance  
+- super() Keyword  
+- Polymorphism via Method Overriding  
+- Class vs Instance Variables  
+- Class Methods (@classmethod)  
+- Practical OOP Examples (Library, Cart, Playlist, etc.)  
+- Multiple Inheritance  
+- Abstract Classes & Interfaces (ABC module)  
+- Interface-Like Behavior  
+- Access Modifiers (Public, Protected, Private)  
+- Polymorphism (with Loops and Abstract Base Classes)  
+- Real-life Polymorphic Examples  
+- OOP Mini Project with Abstract Base Class  
+- Class Variables & @classmethod  
+</summary>  
+
+ 
+### **Topic: Object-Oriented Programming (OOP) in Python**
+
+
+### 🧵 Topic: **Classes and Objects**
+
+**Explanation:**  
+A **class** is a blueprint for creating objects. It defines attributes (variables) and methods (functions) that its instances (objects) will have. Objects are instances of a class and represent real-world entities.
+
+**Example:**
+```python
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"My name is {self.name} and I'm {self.age} years old")
+
+s1 = Student("utkarsh", 21)
+s1.introduce()
+````
+
+---
+
+### 🧵 Topic: **Constructors (`__init__`)**
+
+**Explanation:**
+The `__init__` method is automatically called when a new object is created. It initializes the object’s attributes.
+
+**Example:**
+
+```python
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+```
+
+---
+
+### 🧵 Topic: **Instance Methods**
+
+**Explanation:**
+Instance methods operate on the data stored in an object. They’re defined inside a class and use `self` to access instance variables.
+
+**Example:**
+
+```python
+class Account:
+    def display(self):
+        print(f"owner: {self.owner}, balance: {self.balance}")
+```
+
+---
+
+### 🧵 Topic: **Default Parameter Values**
+
+**Explanation:**
+Default values in constructors let you make parameters optional when creating objects.
+
+**Example:**
+
+```python
+class Person:
+    def __init__(self, name, city="unknown"):
+        self.name = name
+        self.city = city
+```
+
+---
+
+### 🧵 Topic: **Conditional Logic in Methods**
+
+**Explanation:**
+Methods can include logic such as validations or branching. For example, checking if balance is sufficient before withdrawing.
+
+**Example:**
+
+```python
+def withdraw(self, amount):
+    if amount > self.balance:
+        print("insufficient balance")
+    else:
+        self.balance -= amount
+```
+
+---
+
+### 🧵 Topic: **Working with Lists Inside Classes**
+
+**Explanation:**
+Objects can have attributes that are lists to store multiple items, such as grades or products.
+
+**Example:**
+
+```python
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.grade = []
+
+    def add_grade(self, grade):
+        self.grade.append(grade)
+
+    def average(self):
+        return sum(self.grade)/len(self.grade)
+```
+
+---
+
+### 🧵 Topic: **Composition: Object Inside Object**
+
+**Explanation:**
+Composition is when a class contains instances of other classes. Useful for building real-world relationships like Library → Book.
+
+**Example:**
+
+```python
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+```
+
+---
+
+### 🧵 Topic: **Encapsulation**
+
+**Explanation:**
+Encapsulation groups data and methods that operate on that data into one unit — the class. It helps keep the internal details hidden and only exposes necessary functionality.
+
+---
+
+### 🧵 Topic: **Inheritance**
+
+**Explanation:**
+Inheritance lets one class (child) inherit the properties and methods of another class (parent). It enables code reuse and establishes a hierarchy.
+
+**Example:**
+
+```python
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} says Woof")
+```
+
+---
+
+### 🧵 Topic: **`super()` Keyword**
+
+**Explanation:**
+`super()` allows access to methods and properties of a parent class from within a child class. Often used to call the parent’s `__init__` method.
+
+**Example:**
+
+```python
+class Car(Vehicle):
+    def __init__(self, brand, year, model):
+        super().__init__(brand, year)
+        self.model = model
+```
+
+---
+
+### 🧵 Topic: **Polymorphism via Method Overriding**
+
+**Explanation:**
+Polymorphism allows different classes to define methods with the same name but different behavior. Method overriding customizes inherited methods.
+
+**Example:**
+
+```python
+class Rectangle(Shape):
+    def area(self):
+        return self.length * self.breadth
+```
+
+---
+
+### 🧵 Topic: **Class vs Instance Variables**
+
+**Explanation:**
+
+* **Instance variables** (like `self.name`) are unique to each object.
+* **Class variables** (like `species`) are shared across all instances of the class.
+
+**Example:**
+
+```python
+class Dog:
+    species = "Canis Familiaris"  # Class variable
+
+    def __init__(self, name, age):
+        self.name = name           # Instance variable
+```
+
+---
+
+### 🧵 Topic: **Class Methods**
+
+**Explanation:**
+Class methods use the `@classmethod` decorator and receive the class as the first argument (`cls`). They're used to access or modify class-level data.
+
+**Example:**
+
+```python
+class Counter:
+    counter = 0
+
+    @classmethod
+    def get_total(cls):
+        print(cls.counter)
+```
+
+---
+
+### 🧵 Topic: **Practical OOP Examples**
+
+**Explanation:**
+These examples implement real-life use cases using OOP concepts like classes, composition, and inheritance.
+
+**Example:**
+
+```python
+# Library and Book
+lib.add_book(Book("1984", "George Orwell"))
+lib.borrow_book("1984")
+
+# Cart and Product
+cart.add_product(Product("T-shirt", 20.0))
+print(cart.total_price())
+
+# Movie and MovieCollection
+collection.find_by_director("Christopher Nolan")
+
+# Playlist and Song
+my_playlist.play_all()
+my_playlist.remove_song("Bohemian Rhapsody")
+
+# SavingsAccount (extends Account)
+a1 = SavingsAccount("utkarsh", 1000, 7)
+a1.apply_interest()
+```
+
+### 🧵 Topic: **Multiple Inheritance**
+
+**Explanation:**  
+Multiple inheritance allows a class to inherit from more than one parent class. Python resolves method calls using **Method Resolution Order (MRO)** — left to right in the class declaration.
+
+**Example:**
+```python
+class A:
+    def greet(self):
+        print("Hello from A")
+
+class B:
+    def greet(self):
+        print("Hello from B")
+
+class C(A, B):
+    pass
+
+c = C()
+c.greet()   # Output: Hello from A
+print(C.mro())
+````
+
+---
+
+### 🧵 Topic: **Abstract Classes & Interfaces (ABC module)**
+
+**Explanation:**
+Abstract classes are base classes that **cannot be instantiated** and must be inherited.
+They contain **abstract methods** (methods with no implementation) using the `@abstractmethod` decorator.
+
+**Example:**
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def area(self):
+        print("Area of circle")
+
+# shape = Shape()  ❌ Error
+```
+
+---
+
+### 🧵 Topic: **Interface-Like Behavior**
+
+**Explanation:**
+When a class only defines abstract methods, it behaves like an interface — forcing derived classes to implement all declared behaviors.
+
+**Example:**
+
+```python
+class Vehicle(ABC):
+    @abstractmethod
+    def start_engine(self): pass
+
+class Car(Vehicle):
+    def start_engine(self):
+        print("car starts")
+```
+
+---
+
+### 🧵 Topic: **Encapsulation**
+
+**Explanation:**
+Encapsulation means **restricting access** to internal variables and methods.
+
+* `_var` → **protected** (convention)
+* `__var` → **private** (name mangled)
+
+**Example:**
+
+```python
+class Person:
+    def __init__(self):
+        self.name = "alex"       # public
+        self._hobby = "reading"  # protected
+        self.__salary = 50000    # private
+
+    def get_salary(self):
+        return self.__salary
+```
+
+---
+
+### 🧵 Topic: **Polymorphism**
+
+**Explanation:**
+Polymorphism allows different classes to implement the same method in different ways. It works via:
+
+* Method overriding
+* Common interface usage (e.g., iterating over different objects with the same method name)
+
+**Example:**
+
+```python
+class Dog:
+    def make_sound(self):
+        print("woof")
+
+class Cat:
+    def make_sound(self):
+        print("meow")
+
+for animal in [Dog(), Cat()]:
+    animal.make_sound()
+```
+
+---
+
+### 🧵 Topic: **Real-life Polymorphic Examples**
+
+**Explanation:**
+Polymorphism is especially useful when using abstract base classes or unified method calls for different child classes.
+
+**Example:**
+
+```python
+class Employee:
+    def work(self):
+        print("employee is working")
+
+class Developer(Employee):
+    def work(self):
+        print("Developer is coding")
+
+class Designer(Employee):
+    def work(self):
+        print("Designer is sketching")
+
+for emp in [Employee(), Developer(), Designer()]:
+    emp.work()
+```
+
+---
+
+### 🧵 Topic: **OOP Mini Project with Abstract Base Class**
+
+**Explanation:**
+Using `ABC` and `@abstractmethod`, you can create a structured system where each class must define required behavior, like a login system or user management.
+
+**Example:**
+
+```python
+class User(ABC):
+    @abstractmethod
+    def login(self): pass
+
+class Student(User):
+    def login(self):
+        print("Student logged in")
+```
+
+---
+
+### 🧵 Topic: **Class Variables & `@classmethod`**
+
+**Explanation:**
+
+* **Class variables** are shared across all instances.
+* `@classmethod` is used to access or modify class-level variables or behavior.
+
+**Example:**
+
+```python
+class Employee(ABC):
+    employee_count = 0
+
+    @classmethod
+    def display_count(cls):
+        print(cls.employee_count)
+
+class Developer(Employee):
+    def __init__(self, name):
+        self.name = name
+        Employee.employee_count += 1
+```
+
+---
+
+### 🧵 Topic: **Summary of OOP Concepts Used**
+
+| Concept                   | Used In                                                |
+| ------------------------- | ------------------------------------------------------ |
+| Classes & Objects         | `Student`, `Book`, `Account`, etc.                     |
+| Inheritance               | `Dog(Animal)`, `Car(Vehicle)`, etc.                    |
+| Method Overriding         | `Car.show_info()`, `Developer.work()`                  |
+| Encapsulation             | Private/protected attributes like `__salary`, `_marks` |
+| Polymorphism              | Loops calling `.work()` on various classes             |
+| Abstract Classes          | `Shape`, `MediaFile`, `Employee`                       |
+| Multiple Inheritance      | `Robot(Speaker, Mover)`                                |
+| Composition               | `Library` contains multiple `Book`                     |
+| Class Methods & Variables | `Employee.display_count()`, `Book.total_revenue`       |
+
+
+
+
+</details>
+
+---
+
+<details>
+<summary> 
+ 
+ ## 🪄 Lab 6
+
+- Dunder (Magic) Methods in Python  
+- Object Initialization & Representation – `__init__`, `__str__`, `__repr__`
+- Operator Overloading – `__eq__`, `__add__`, `__lt__`
+- Collection-Like Behavior – `__len__`, `__getitem__`, `__setitem__`, `__contains__`
+- Callable Objects – `__call__`
+- Full Custom Class Example – `TaskManager` using multiple dunder methods
+</summary>
+
+### 🧵 Topic: Dunder (Magic) Methods in Python
+
+**Explanation:**
+Dunder methods (short for "double underscore") are special methods in Python that let you override or extend default behavior for built-in operations like printing, comparing, indexing, adding, calling, etc. These methods start and end with double underscores (e.g., `__init__`, `__str__`, `__add__`).
+
+| Dunder Method  | Purpose                                       |
+| -------------- | --------------------------------------------- |
+| `__init__`     | Constructor, initializes object properties    |
+| `__str__`      | Defines output for `print(obj)` or `str(obj)` |
+| `__repr__`     | Official representation for debugging         |
+| `__eq__`       | Custom logic for equality `==`                |
+| `__add__`      | Defines behavior for `+` operator             |
+| `__len__`      | Defines behavior for `len(obj)`               |
+| `__lt__`       | Defines behavior for `<` operator             |
+| `__getitem__`  | Enables indexing like `obj[i]`                |
+| `__setitem__`  | Allows assignment like `obj[i] = x`           |
+| `__contains__` | Used by `in` keyword                          |
+| `__call__`     | Allows objects to be called like functions    |
+
+---
+
+### 📘 `__str__` - String Representation for Users
+
+```python
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f'"{self.title}" by {self.author}'
+
+b1 = Book("1984", "George Orwell")
+print(b1)
+```
+
+**Explanation:**
+`__str__` returns a user-friendly string when the object is printed.
+
+**Output:**
+
+```
+"1984" by George Orwell
+```
+
+---
+
+### ➕ `__add__` - Overloading `+` Operator
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __str__(self):
+        return f'Point({self.x}, {self.y})'
+
+p1 = Point(2, 3)
+p2 = Point(4, 5)
+print(p1 + p2)
+```
+
+**Explanation:**
+`__add__` defines how `+` works for two objects. Returns a new Point.
+
+**Output:**
+
+```
+Point(6, 8)
+```
+
+---
+
+### 🤝 `__eq__` - Overloading `==` Operator
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __eq__(self, other):
+        return self.name.lower() == other.name.lower()
+
+p1 = Person("Alice")
+p2 = Person("alice")
+print(p1 == p2)
+```
+
+**Explanation:**
+`__eq__` defines how equality is checked. Here, case-insensitive name match.
+
+**Output:**
+
+```
+True
+```
+
+---
+
+### 💸 `__add__` - Wallets Sum Up
+
+```python
+class Wallet:
+    def __init__(self, amount):
+        self.amount = amount
+
+    def __add__(self, other):
+        return Wallet(self.amount + other.amount)
+
+    def __str__(self):
+        return f'{self.amount}'
+
+w1 = Wallet(50)
+w2 = Wallet(100)
+w3 = w1 + w2
+print(w3)
+```
+
+**Explanation:**
+Adds the amounts in two wallets and returns a new Wallet.
+
+**Output:**
+
+```
+150
+```
+
+---
+
+### 📦 `__lt__` - Less Than Comparison
+
+```python
+class Box:
+    def __init__(self, x, y, z):
+        self.volume = x * y * z
+
+    def __lt__(self, other):
+        return self.volume < other.volume
+
+b1 = Box(3, 3, 3)
+b2 = Box(2, 3, 4)
+print(b1 < b2)
+print(b2 < b1)
+```
+
+**Explanation:**
+`__lt__` defines `<` behavior. Compares volumes of the boxes.
+
+**Output:**
+
+```
+False
+True
+```
+
+---
+
+### 📓 `__getitem__` - Indexing Support
+
+```python
+class Notebook:
+    def __init__(self):
+        self.notes = []
+
+    def add_note(self, title):
+        self.notes.append(title)
+
+    def __getitem__(self, index):
+        return self.notes[index]
+
+n = Notebook()
+n.add_note("Buy milk")
+n.add_note("Study OOP")
+print(n[0])
+```
+
+**Explanation:**
+Allows indexing into custom object like a list.
+
+**Output:**
+
+```
+Buy milk
+```
+
+---
+
+### 🎒 `__contains__` - `in` Operator
+
+```python
+class Inventory:
+    def __init__(self):
+        self.items = []
+
+    def add(self, item):
+        self.items.append(item)
+
+    def __contains__(self, item):
+        return item in self.items
+
+inv = Inventory()
+inv.add("sword")
+print("sword" in inv)
+```
+
+**Explanation:**
+Enables `in` operator for the custom class.
+
+**Output:**
+
+```
+True
+```
+
+---
+
+### 🧾 `__setitem__` + `__getitem__` - Dict-like Behavior
+
+```python
+class Scoreboard:
+    def __init__(self):
+        self.scores = {}
+
+    def __setitem__(self, player, score):
+        self.scores[player] = score
+
+    def __getitem__(self, player):
+        return self.scores[player]
+
+sb = Scoreboard()
+sb["Alice"] = 100
+print(sb["Alice"])
+```
+
+**Explanation:**
+Allows dictionary-style assignment and access.
+
+**Output:**
+
+```
+100
+```
+
+---
+
+### 📞 `__call__` - Make Object Callable
+
+```python
+class Greeter:
+    def __init__(self, greeting):
+        self.greeting = greeting
+
+    def __call__(self, name):
+        print(f"{self.greeting}, {name}!")
+
+j = Greeter("Hello")
+j("Utkarsh")
+```
+
+**Explanation:**
+Allows object to be used like a function call.
+
+**Output:**
+
+```
+Hello, Utkarsh!
+```
+
+---
+
+### 📋 Full Feature Example: Task Manager
+
+```python
+class TaskManager:
+    def __init__(self):
+        self.tasks = {}
+
+    def __setitem__(self, name, description):
+        self.tasks[name] = description
+
+    def __getitem__(self, name):
+        return self.tasks[name]
+
+    def __contains__(self, name):
+        return name in self.tasks
+
+    def __len__(self):
+        return len(self.tasks)
+
+    def __str__(self):
+        return f"task manager : {self.tasks}"
+
+    def __repr__(self):
+        return f"task manager : {self.tasks}"
+
+    def __call__(self):
+        for key in self.tasks:
+            print(f"{key} : {self.tasks[key]}")
+
+tm = TaskManager()
+tm["laundry"] = "Wash clothes"
+tm["study"] = "Python OOP"
+print("laundry" in tm)
+print(tm["study"])
+print(len(tm))
+tm()
+print(tm)
+```
+
+**Explanation:**
+Implements multiple dunder methods to make object behave like a dictionary, function, iterable, etc.
+
+**Output:**
+
+```
+True
+Python OOP
+2
+laundry : Wash clothes
+study : Python OOP
+task manager : {'laundry': 'Wash clothes', 'study': 'Python OOP'}
+```
+
+---
+
+Each dunder method customizes specific behavior and interaction of objects with Python syntax and built-in operations. Understanding and using them allows you to design more intuitive and powerful custom classes.
+</details>
+
+---
+
+<details>
+
+ <summary>
+  
+  ## 📂 Lab 7
+- File Handling Basics (`open()`, `with`, file modes)
+- Reading Files (`.read()`, `.readline()`, loops)
+- Writing & Appending (`.write()`, `.writelines()`)
+- Creating & Deleting Files (`os.path.exists()`, `os.remove()`)
+- Copying Content Between Files
+- Line Operations (count lines, first/last line, longest line)
+- Word Search & Frequency (`in`, `.count()`)
+- Multiline Text & String Lists
+- Sorting with `key=` (lambda, str.lower, object attributes)
+
+ 
+ </summary>
+
+### 🗂️ Topic: File Handling in Python
+
+**Explanation:**
+File handling in Python lets you work with external files — reading from them, writing to them, appending new data, creating or even deleting files. Python makes this very flexible and simple using built-in functions like `open()` and the `with` statement.
+
+| Mode  | Meaning                               |
+| ----- | ------------------------------------- |
+| `"r"` | Read (default mode)                   |
+| `"w"` | Write (creates or overwrites file)    |
+| `"a"` | Append (creates file if not exists)   |
+| `"x"` | Create (fails if file already exists) |
+| `"b"` | Binary mode (like for images)         |
+| `"t"` | Text mode (default)                   |
+
+---
+
+### 📖 Reading from a File
+
+```python
+f = open("names.txt", "r")
+print(f.read())
+f.close()
+```
+
+**Explanation:**
+
+* Opens `names.txt` in read mode.
+* `.read()` returns the full content.
+* `.close()` is used to free the file resource.
+
+---
+
+### 📄 Reading Line by Line
+
+```python
+f = open("names.txt", "r")
+print(f.readline())  # reads only the first line
+f.close()
+```
+
+**Explanation:**
+
+* `.readline()` reads one line at a time.
+* Useful for large files.
+
+---
+
+### 🔄 Reading File Using Loop
+
+```python
+with open("names.txt") as f:
+    for line in f:
+        print(line.strip())
+```
+
+**Explanation:**
+
+* `with` automatically closes the file.
+* `.strip()` removes trailing newline.
+
+---
+
+### ✏️ Appending to a File
+
+```python
+with open("names.txt", "a") as f:
+    f.write("utkarsh6\n")
+```
+
+**Explanation:**
+
+* Appends to the end of the file.
+* If file doesn’t exist, it is created.
+
+---
+
+### 🧹 Overwriting File (Write Mode)
+
+```python
+with open("names.txt", "w") as f:
+    f.write("deleted everything")
+```
+
+**Explanation:**
+
+* `"w"` overwrites the file from scratch.
+
+---
+
+### 🆕 Creating a New File Safely
+
+```python
+import os
+if not os.path.exists("utk.txt"):
+    with open("utk.txt", "x") as f:
+        pass
+else:
+    print("already exists")
+```
+
+**Explanation:**
+
+* `"x"` creates a file only if it doesn’t exist.
+
+---
+
+### ❌ Deleting a File
+
+```python
+import os
+if os.path.exists("utk.txt"):
+    os.remove("utk.txt")
+else:
+    print("file doesn't exist")
+```
+
+**Explanation:**
+
+* Use `os.remove()` to delete.
+* Always check with `os.path.exists()`.
+
+---
+
+### 📋 Copying Content from One File to Another
+
+```python
+with open("names.txt") as f:
+    content = f.read()
+
+with open("more_names.txt", "a") as f:
+    f.write(content)
+```
+
+**Explanation:**
+
+* First reads content.
+* Then appends it to `more_names.txt`.
+
+---
+
+### 🧾 Writing Multi-line Text
+
+```python
+with open("notes.txt", "w") as f:
+    f.write("""my name is utkarsh.\nI am 21 years old.\nI am thinking about reading the book Psycho-Cybernetics.""")
+```
+
+**Explanation:**
+
+* Triple quotes for multi-line strings.
+
+---
+
+### 📚 Writing Using List of Strings
+
+```python
+lines = [
+    "my name is utkarsh.\n",
+    "I am 21 years old.\n",
+    "I am thinking about reading the book Psycho-Cybernetics.\n"
+]
+with open("notes.txt", "w") as f:
+    f.writelines(lines)
+```
+
+**Explanation:**
+
+* `.writelines()` writes list of strings as-is.
+
+---
+
+### 🧮 Counting Lines in a File
+
+```python
+with open("notes.txt") as f:
+    print(len(f.readlines()))
+```
+
+**Explanation:**
+
+* `.readlines()` returns list of all lines.
+* `len()` gives total number of lines.
+
+---
+
+### 🔍 Searching in File
+
+```python
+with open("notes.txt") as f:
+    for line in f:
+        if "cybernetics" in line.lower():
+            print("Found:", line.strip())
+```
+
+**Explanation:**
+
+* Searches for word "cybernetics" ignoring case.
+
+---
+
+### 🔢 Count Word Occurrences
+
+```python
+count = 0
+with open("notes.txt") as f:
+    for line in f:
+        count += line.lower().count("am")
+print("Total 'am' characters:", count)
+```
+
+**Explanation:**
+
+* Counts how many times "am" appears in the file.
+
+---
+
+### 🖨️ Print Specific Lines
+
+```python
+with open("notes.txt") as file:
+    for i in range(2):
+        print(file.readline().strip())
+```
+
+**Explanation:**
+
+* Reads and prints first 2 lines.
+
+---
+
+### 🔚 Print First and Last Line
+
+```python
+with open("notes.txt") as f:
+    lines = f.readlines()
+print(lines[0].strip())      # First line
+print(lines[-1].strip())     # Last line
+```
+
+**Explanation:**
+
+* First and last line using indexing.
+
+---
+
+### 💡 Writing Multiple Lines to New File
+
+```python
+lines = ["line 1\n", "line 2\n", "line 3\n"]
+with open("output.txt", "w") as f:
+    f.writelines(lines)
+```
+
+**Explanation:**
+
+* Writes predefined lines to a file.
+
+---
+
+### 📏 Longest Line in a File
+
+```python
+with open("sample.txt") as f:
+    lines = f.readlines()
+
+longest_line = max(lines, key=len)
+print(longest_line.strip(), ":", len(longest_line.strip()))
+```
+
+**Explanation:**
+
+* Finds line with max length using `key=len`.
+* Strips and prints it with its length.
+
+---
+
+### 🔑 Bonus: Understanding `key=` Argument
+
+**`key=`** is used with `max()`, `min()`, and `sorted()` to customize how comparison is done:
+
+#### 🧮 Examples:
+
+```python
+words = ["apple", "Banana", "pear"]
+print(sorted(words, key=str.lower))  # case-insensitive
+```
+
+```python
+names = ["Sam", "Bob", "Alex"]
+print(sorted(names, key=lambda x: x[-1]))  # last char sort
+```
+
+```python
+people = [("Alice", 25), ("Bob", 20), ("Charlie", 30)]
+print(sorted(people, key=lambda x: x[1]))  # by age
+```
+
+```python
+class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+
+students = [Student("Alice", 85), Student("Bob", 92)]
+topper = max(students, key=lambda s: s.grade)
+print(topper.name)
+```
+
+---
+
+
+* Use `open()` or `with open()` to read/write files.
+* Always close files or use `with` block.
+* Use modes like `r`, `w`, `a`, `x` depending on task.
+* `key=` argument is powerful for custom sorting or filtering.
+
+📁 File handling is a **core part of real-world Python programming** — for logs, configs, saving data, backups, etc.
+
+</details>
+
+---
+
+<details>
+
+ <summary> 
+  
+  ## ☁️ Lab 8
+
+ - APIs & HTTP Requests (`requests`, query parameters, JSON)
+- Using OpenWeatherMap API to fetch live weather
+- Secure API Keys using `.env` file & `dotenv`
+- Accessing Environment Variables with `os.getenv()`
+- Pretty Printing JSON with `pprint` (optional)
+- Creating & Activating Virtual Environments (`venv`)
+- Managing Dependencies with `requirements.txt`
+ 
+ </summary>
+
+### 🌍 Topic: Weather API Project with Environment Variables and External Packages
+
+---
+
+### 🔌 What is an API?
+
+**API (Application Programming Interface)** allows different software systems to communicate with each other.
+
+In this lab, we use the **OpenWeatherMap API** to get live weather data for any city by making an HTTP request.
+
+```python
+https://api.openweathermap.org/data/2.5/weather
+```
+
+We attach **query parameters** like:
+
+* `q=cityname` – for city input
+* `appid=your_api_key` – unique API key (kept secret)
+* `units=metric` – temperature in Celsius
+
+---
+
+### 📦 What are Packages?
+
+**Packages** are collections of Python modules. Here, we use:
+
+* `requests` – to send HTTP requests to the weather API
+* `dotenv` – to securely manage sensitive info like the API key
+* `os` – to access environment variables
+* `pprint` – to print JSON data nicely (optional)
+
+> You install them using `pip install requests python-dotenv`
+
+---
+
+### 🧪 Example Code Walkthrough
+
+```python
+import requests
+from dotenv import load_dotenv
+import os
+from pprint import pprint
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Function to fetch current weather for user-entered city
+def get_current_weather():
+    print('\n*** Get Current Weather Conditions ***\n')
+
+    city = input("\nPlease enter a city name: ").replace(" ", "+")
+
+    request_url = f'https://api.openweathermap.org/data/2.5/weather?appid={os.getenv("API_KEY")}&q={city}&units=metric'
+
+    weather_data = requests.get(request_url).json()
+
+    print(f'\nCurrent weather for {weather_data["name"]}.')
+    print(f'\nThe temperature is  {weather_data["main"]["temp"]}.')
+    print(f'\nFeels like  {weather_data["main"]["feels_like"]} and {weather_data["weather"][0]["description"]}.')
+
+# Only run the function if this is the main file
+if __name__ == "__main__":
+    get_current_weather()
+```
+
+### 🖥️ Output:
+
+```
+Please enter a city name: Mumbai
+
+Current weather for Mumbai.
+The temperature is  30.2.
+Feels like  34.6 and haze.
+```
+
+---
+
+### 🗃️ .env File and dotenv
+
+`.env` is a simple file used to store environment variables locally.
+It is **not pushed to GitHub** to protect secrets.
+
+```dotenv
+API_KEY=your_openweathermap_api_key_here
+```
+
+* Use `load_dotenv()` to load these variables into your Python script.
+* Access them via `os.getenv("API_KEY")`
+
+---
+
+### 💻 os Module
+
+The `os` module provides access to operating system functionalities like environment variables, file paths, etc.
+
+```python
+os.getenv("API_KEY")
+```
+
+---
+
+### 🧪 Virtual Environments (`venv`)
+
+A **virtual environment** is an isolated Python environment for your project.
+It ensures that dependencies do not interfere across projects.
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+```
+
+---
+
+### 📄 `requirements.txt`
+
+This file lists all the packages your project needs.
+You generate it using:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Install packages later using:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Example:**
+
+```
+requests
+python-dotenv
+```
+
+---
+
+
+
+* ✅ Use APIs to fetch external data like weather
+* 🔐 Store secrets securely using `.env`
+* 📦 Install packages like `requests`, `dotenv`
+* 🧪 Use `venv` to manage dependencies
+* 📄 Track dependencies with `requirements.txt`
+
+
+
+</details>
+
+---
+
+<details>
+ <summary>
+  
+  ## 🌤️ Lab 9
+ 
+ - Flask Web App Structure – `app`, routes, templates, `render_template()`
+- API Integration – using `requests` to fetch weather data
+- Secure API Keys – `.env` file, `load_dotenv()`, `os.getenv()`
+- URL Query Handling – `request.args.get("city")`
+- Dynamic Templates – Jinja2 placeholders (`{{ }}`), conditional rendering
+- Production Server – `waitress.serve()` for deployment
+- Frontend Integration – HTML form for input, CSS via `url_for('static', ...)`
+- Virtual Environments – `venv`, activation, isolation
+- Dependency Management – `requirements.txt`
+- f-string Formatting – precision, alignment, thousands separator
+ </summary>
+
+### 🌤️ Topic: Weather API Web App using Flask
+---
+
+### 🧩 Concepts Used
+
+#### 📦 `requests`
+
+Used to make HTTP requests to external APIs (like OpenWeatherMap) and handle responses in JSON format.
+
+#### 🔐 `dotenv`
+
+Used to load sensitive API keys from a `.env` file to avoid hardcoding them into the source code.
+
+```python
+from dotenv import load_dotenv
+load_dotenv()
+```
+
+#### 🗝️ `os.getenv()`
+
+Access environment variables securely using Python's `os` module.
+
+```python
+os.getenv("API_KEY")
+```
+
+#### 🌐 Flask
+
+Flask is a lightweight web framework for building web applications in Python.
+
+| Feature              | Description                                    |
+| -------------------- | ---------------------------------------------- |
+| `Flask`              | Main web framework                             |
+| `render_template()`  | Renders HTML templates using Jinja2 templating |
+| `@app.route()`       | Creates URL routes (like `/`, `/weather`)      |
+| `request.args.get()` | Gets query parameters from the URL             |
+
+#### ⚙️ Waitress
+
+Production-ready WSGI server used to serve Flask applications more reliably than the default dev server.
+
+```python
+from waitress import serve
+serve(app, host="0.0.0.0", port=8000)
+```
+
+#### 📁 `templates/` & `static/`
+
+* HTML files are stored in the `templates` folder.
+* CSS and images are in the `static` folder.
+* Flask uses **Jinja2** syntax in HTML files (`{{ ... }}`) to inject dynamic data.
+
+---
+
+### 🧪 Example 1: `weather.py` - API Integration
+
+```python
+from dotenv import load_dotenv
+from pprint import pprint
+import requests
+import os
+
+load_dotenv()
+
+def get_current_weather(city="kolkata"):
+    if not bool(city.strip()):
+        city = "kolkata"
+
+    request_url = f'https://api.openweathermap.org/data/2.5/weather?appid={os.getenv("API_KEY")}&q={city}&units=metric'
+
+    weather_data = requests.get(request_url).json()
+    if weather_data['cod'] == 200:
+        return weather_data
+    else:
+        return False
+```
+
+**Explanation:**
+
+* Loads environment variables using `dotenv`
+* Sends an HTTP request to the OpenWeatherMap API
+* Returns weather data as a dictionary if the city is valid, else returns `False`
+
+**Sample Output:**
+
+```
+{'name': 'Kolkata', 'main': {'temp': 32, 'feels_like': 34}, 'weather': [{'description': 'clear sky'}]}
+```
+
+---
+
+### 🌐 Example 2: `server.py` - Flask Web Server
+
+```python
+from flask import Flask, render_template, request
+from weather import get_current_weather
+from waitress import serve
+
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+@app.route('/weather')
+def get_weather():
+    city = request.args.get('city')
+    weather_data = get_current_weather(city or "kolkata")
+
+    if not weather_data:
+        return render_template("city_not_found.html")
+
+    return render_template(
+        "weather.html",
+        title=weather_data['name'],
+        status=weather_data["weather"][0]["description"].capitalize(),
+        temp=f"{weather_data['main']['temp']:.1f}",
+        feels_like=f"{weather_data['main']['feels_like']:.1f}"
+    )
+
+if __name__ == "__main__":
+    serve(app, host="0.0.0.0", port=8000)
+```
+
+**Explanation:**
+
+* Sets up routing for the homepage and `/weather`
+* Gets user input from query string and uses it to fetch weather data
+* Displays formatted data in the web page using templates
+* Uses `waitress` to serve the app in production mode
+
+---
+
+### 🧾 Templates
+
+#### 🏠 `index.html`
+
+```html
+<form action="/weather">
+  <input type="text" name="city" placeholder="kolkata" />
+  <button type="submit">Get Weather</button>
+</form>
+```
+
+Displays a form to get the city input from the user.
+
+#### 🌡️ `weather.html`
+
+```html
+<h1>{{ title }} Weather</h1>
+<p>{{ status }} and {{ temp }} °</p>
+<p>Feels like {{ feels_like }} °</p>
+```
+
+Displays weather results dynamically using Jinja2 placeholders.
+
+#### ❌ `city_not_found.html`
+
+```html
+<h1>City not found</h1>
+<h4>Try Again?</h4>
+```
+
+Displays a user-friendly message if the entered city is not found.
+
+---
+
+### 📜 `requirements.txt`
+
+Tracks all required packages for the project:
+
+```
+Flask
+requests
+python-dotenv
+waitress
+```
+
+Use this file to set up the environment:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 🌱 Virtual Environment (venv)
+
+To isolate dependencies:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate     # Windows
+```
+
+---
+
+### 💡 HTML Template Notes
+
+| Mode          | Example                                                                  |
+| ------------- | ------------------------------------------------------------------------ |
+| Plain HTML    | `<link href="style.css" rel="stylesheet">`                               |
+| Flask + Jinja | `<link href="{{ url_for('static', filename='styles/style.css') }}" ...>` |
+
+🔹 `{{ ... }}` - Jinja2 syntax for inserting Python variables into HTML
+🔹 `url_for()` - Safely links to static files like CSS or JS
+
+---
+
+### 🎯 f-String Formatting Options in Python
+
+| Format  | Description               | Example Output  |
+| ------- | ------------------------- | --------------- |
+| `.2f`   | 2 decimal places          | `'3.14'`        |
+| `:>10`  | Right-align in 10 spaces  | `'     hello'`  |
+| `:<10`  | Left-align                | `'hello     '`  |
+| `:^10`  | Center-align              | `'  hello   '`  |
+| `:,`    | Comma separator           | `'1,000'`       |
+| `:_`    | Underscore separator      | `'1_000'`       |
+| `.1%`   | Percentage format         | `'25.0%'`       |
+| `b`     | Binary                    | `'1010'`        |
+| `x / X` | Hexadecimal (lower/upper) | `'ff'` / `'FF'` |
+| `.2e`   | Scientific notation       | `'1.23e+04'`    |
+
+💡 Combine them like:
+
+```python
+f"{1234.56789:>10,.2f}"  # ➜ '  1,234.57'
+```
+
+---
+
+### 🧠 Summary Table
+
+| Concept            | Use Case                                      |
+| ------------------ | --------------------------------------------- |
+| `requests`         | Get data from APIs                            |
+| `.env` & `os`      | Securely store and access API keys            |
+| `Flask`            | Web framework to handle routing and templates |
+| `waitress`         | Production-ready server for Flask apps        |
+| `templates`        | Folder for dynamic HTML rendering (Jinja2)    |
+| `static`           | Folder for CSS/images (linked in templates)   |
+| `f-strings`        | Format strings with precision and style       |
+| `requirements.txt` | Track project dependencies for setup          |
+| `venv`             | Create isolated Python environments           |
+
+
+
+
+</details>
+
+---
+
+<details>
+<summary>
+ 
+ ## ⚙️ Lab 10 
+
+- Generators – `yield`, generator functions, generator expressions
+- Iterators – `__iter__()`, `__next__()`, `StopIteration`
+- Modules & Import Styles – `math`, `statistics`, `random`, `from ... import ...`
+- *args and **kwargs – variable-length positional & keyword arguments
+- Decorators – function wrapping with `@decorator`, logging use case
+</summary> 
+
+### ⚙️ Topic: Generators, Iterators, Modules, *args, \*\*kwargs, Decorators
+
+---
+
+### 🔄 Generators
+
+Generators are special functions that **return one item at a time** using the `yield` keyword. They don’t store all values in memory, which makes them great for large datasets.
+
+#### 🔹 Example: Simple Generator
+
+```python
+def my_generator():
+    for i in range(5):
+        yield i
+
+# Create generator object
+gen = my_generator()
+print(next(gen))  # 0
+print(next(gen))  # 1
+print(next(gen))  # 2
+
+for j in gen:
+    print(j)  # 3, 4
+```
+
+**Explanation:**
+
+* `yield` works like `return`, but **pauses the function** and **remembers where it left off**.
+* `next()` is used to manually get the next value.
+* The `for` loop continues from the last yield.
+
+---
+
+#### 🔹 Example: Custom Count Generator
+
+```python
+def count_upto(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+for num in count_upto(10):
+    print(num)
+```
+
+**Explanation:**
+
+* This generator yields numbers from 1 to `n`, one at a time.
+
+---
+
+#### 🔹 Example: Generator Expression
+
+```python
+squares = (x*x for x in range(5))
+print(squares)  # <generator object>
+
+for sq in squares:
+    print(sq)
+```
+
+**Explanation:**
+
+* Like list comprehensions, but with `()`.
+* Values are computed **lazily** when needed.
+
+---
+
+### 🔁 Iterators
+
+Iterators are objects that support the **iterator protocol**: they must have `__iter__()` and `__next__()` methods.
+
+#### 🔹 Example: Custom Iterator for Even Numbers
+
+```python
+class EvenNumbers:
+    def __init__(self, limit):
+        self.limit = limit
+        self.current = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current <= self.limit:
+            num = self.current
+            self.current += 2
+            return num
+        else:
+            raise StopIteration
+
+for i in EvenNumbers(10):
+    print(i)
+```
+
+**Explanation:**
+
+* `__next__()` returns the next even number.
+* When limit is exceeded, `StopIteration` is raised to end the loop.
+
+---
+
+### 📦 Modules and Import Styles
+
+Python allows code reuse using modules.
+
+```python
+import math
+print(math.sqrt(64))
+
+from os import path
+```
+
+#### 🔹 Common `math` module functions:
+
+* `ceil(x)` – round up
+* `floor(x)` – round down
+* `pow(x, y)` – x to the power y
+* `fabs(x)` – absolute value (as float)
+* `factorial(x)`
+* Trigonometric: `cos()`, `sin()`, `tan()`
+* `log(x)` – natural log
+* `radians(x)` – convert degrees to radians
+
+#### 🔹 `statistics` module:
+
+```python
+import statistics as st
+st.mean(), st.median(), st.mode(), st.stdev()
+```
+
+Useful for basic statistical analysis.
+
+#### 🔹 `random` module:
+
+```python
+import random as rd
+rd.random()         # Random float (0 to 1)
+rd.randint(1, 10)   # Random integer from 1 to 10
+rd.choice(mylist)  # Random item from list/tuple
+rd.randrange(5, 10, 2)  # Random from 5, 7, 9
+```
+
+---
+
+### 🔗 \*args and \*\*kwargs
+
+These allow you to pass **variable numbers of arguments** to a function.
+
+```python
+def shipping_label(*args, **kwargs):
+    for arg in args:
+        print(arg, end=" ")
+    print()
+
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+shipping_label("Dr", "Spongebob", street="123 Fake St")
+```
+
+**Explanation:**
+
+* `*args` is a **tuple** of positional arguments.
+* `**kwargs` is a **dictionary** of keyword arguments.
+
+#### 🔹 Example:
+
+```python
+def hello(*args, **kwargs):
+    print(args)      # ('utkarsh', 'yadav')
+    print(kwargs)    # {'age': 21, 'dob': 2004}
+
+hello("utkarsh", "yadav", age=21, dob=2004)
+```
+
+---
+
+### 🎭 Decorators
+
+A decorator is a function that **wraps another function** to add new behavior.
+
+#### 🔹 Basic Decorator Example
+
+```python
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print("Started")
+        result = func(*args, **kwargs)
+        print("Ended")
+        return result
+    return wrapper
+
+@logger
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Utkarsh")
+```
+
+**Explanation:**
+
+* `@logger` wraps the `greet` function.
+* Prints messages **before and after** the function call.
+
+#### 🔹 Use Case: Logging Function Calls
+
+```python
+import datetime
+
+def log(func):
+    def wrapper(*args, **kwargs):
+        with open("log.txt", "a") as f:
+            f.write("Called function with " + " ".join(map(str, args)) +
+                    " at " + str(datetime.datetime.now()) + "\n")
+        return func(*args, **kwargs)
+    return wrapper
+
+@log
+def run(a, b, c=9):
+    print(a + b + c)
+
+run(1, 3)
+```
+
+**Explanation:**
+
+* Writes the arguments and timestamp to `log.txt` each time `run()` is called.
+
+---
+
+### 🧠 Summary Table
+
+| Topic                    | Description                            |
+| ------------------------ | -------------------------------------- |
+| `yield`                  | Returns a value & pauses the generator |
+| `__iter__`, `__next__`   | Needed to build custom iterators       |
+| `*args`                  | Accept multiple positional arguments   |
+| `**kwargs`               | Accept multiple keyword arguments      |
+| `decorators`             | Add behavior around existing functions |
+| `math/statistics/random` | Useful built-in Python modules         |
+
+
 </details>
