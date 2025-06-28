@@ -2073,5 +2073,327 @@ task manager : {'laundry': 'Wash clothes', 'study': 'Python OOP'}
 Each dunder method customizes specific behavior and interaction of objects with Python syntax and built-in operations. Understanding and using them allows you to design more intuitive and powerful custom classes.
 </details>
 
+<details>
 
+ <summary> 📂 Lab 7</summary>
+
+### 🗂️ Topic: File Handling in Python
+
+**Explanation:**
+File handling in Python lets you work with external files — reading from them, writing to them, appending new data, creating or even deleting files. Python makes this very flexible and simple using built-in functions like `open()` and the `with` statement.
+
+| Mode  | Meaning                               |
+| ----- | ------------------------------------- |
+| `"r"` | Read (default mode)                   |
+| `"w"` | Write (creates or overwrites file)    |
+| `"a"` | Append (creates file if not exists)   |
+| `"x"` | Create (fails if file already exists) |
+| `"b"` | Binary mode (like for images)         |
+| `"t"` | Text mode (default)                   |
+
+---
+
+### 📖 Reading from a File
+
+```python
+f = open("names.txt", "r")
+print(f.read())
+f.close()
+```
+
+**Explanation:**
+
+* Opens `names.txt` in read mode.
+* `.read()` returns the full content.
+* `.close()` is used to free the file resource.
+
+---
+
+### 📄 Reading Line by Line
+
+```python
+f = open("names.txt", "r")
+print(f.readline())  # reads only the first line
+f.close()
+```
+
+**Explanation:**
+
+* `.readline()` reads one line at a time.
+* Useful for large files.
+
+---
+
+### 🔄 Reading File Using Loop
+
+```python
+with open("names.txt") as f:
+    for line in f:
+        print(line.strip())
+```
+
+**Explanation:**
+
+* `with` automatically closes the file.
+* `.strip()` removes trailing newline.
+
+---
+
+### ✏️ Appending to a File
+
+```python
+with open("names.txt", "a") as f:
+    f.write("utkarsh6\n")
+```
+
+**Explanation:**
+
+* Appends to the end of the file.
+* If file doesn’t exist, it is created.
+
+---
+
+### 🧹 Overwriting File (Write Mode)
+
+```python
+with open("names.txt", "w") as f:
+    f.write("deleted everything")
+```
+
+**Explanation:**
+
+* `"w"` overwrites the file from scratch.
+
+---
+
+### 🆕 Creating a New File Safely
+
+```python
+import os
+if not os.path.exists("utk.txt"):
+    with open("utk.txt", "x") as f:
+        pass
+else:
+    print("already exists")
+```
+
+**Explanation:**
+
+* `"x"` creates a file only if it doesn’t exist.
+
+---
+
+### ❌ Deleting a File
+
+```python
+import os
+if os.path.exists("utk.txt"):
+    os.remove("utk.txt")
+else:
+    print("file doesn't exist")
+```
+
+**Explanation:**
+
+* Use `os.remove()` to delete.
+* Always check with `os.path.exists()`.
+
+---
+
+### 📋 Copying Content from One File to Another
+
+```python
+with open("names.txt") as f:
+    content = f.read()
+
+with open("more_names.txt", "a") as f:
+    f.write(content)
+```
+
+**Explanation:**
+
+* First reads content.
+* Then appends it to `more_names.txt`.
+
+---
+
+### 🧾 Writing Multi-line Text
+
+```python
+with open("notes.txt", "w") as f:
+    f.write("""my name is utkarsh.\nI am 21 years old.\nI am thinking about reading the book Psycho-Cybernetics.""")
+```
+
+**Explanation:**
+
+* Triple quotes for multi-line strings.
+
+---
+
+### 📚 Writing Using List of Strings
+
+```python
+lines = [
+    "my name is utkarsh.\n",
+    "I am 21 years old.\n",
+    "I am thinking about reading the book Psycho-Cybernetics.\n"
+]
+with open("notes.txt", "w") as f:
+    f.writelines(lines)
+```
+
+**Explanation:**
+
+* `.writelines()` writes list of strings as-is.
+
+---
+
+### 🧮 Counting Lines in a File
+
+```python
+with open("notes.txt") as f:
+    print(len(f.readlines()))
+```
+
+**Explanation:**
+
+* `.readlines()` returns list of all lines.
+* `len()` gives total number of lines.
+
+---
+
+### 🔍 Searching in File
+
+```python
+with open("notes.txt") as f:
+    for line in f:
+        if "cybernetics" in line.lower():
+            print("Found:", line.strip())
+```
+
+**Explanation:**
+
+* Searches for word "cybernetics" ignoring case.
+
+---
+
+### 🔢 Count Word Occurrences
+
+```python
+count = 0
+with open("notes.txt") as f:
+    for line in f:
+        count += line.lower().count("am")
+print("Total 'am' characters:", count)
+```
+
+**Explanation:**
+
+* Counts how many times "am" appears in the file.
+
+---
+
+### 🖨️ Print Specific Lines
+
+```python
+with open("notes.txt") as file:
+    for i in range(2):
+        print(file.readline().strip())
+```
+
+**Explanation:**
+
+* Reads and prints first 2 lines.
+
+---
+
+### 🔚 Print First and Last Line
+
+```python
+with open("notes.txt") as f:
+    lines = f.readlines()
+print(lines[0].strip())      # First line
+print(lines[-1].strip())     # Last line
+```
+
+**Explanation:**
+
+* First and last line using indexing.
+
+---
+
+### 💡 Writing Multiple Lines to New File
+
+```python
+lines = ["line 1\n", "line 2\n", "line 3\n"]
+with open("output.txt", "w") as f:
+    f.writelines(lines)
+```
+
+**Explanation:**
+
+* Writes predefined lines to a file.
+
+---
+
+### 📏 Longest Line in a File
+
+```python
+with open("sample.txt") as f:
+    lines = f.readlines()
+
+longest_line = max(lines, key=len)
+print(longest_line.strip(), ":", len(longest_line.strip()))
+```
+
+**Explanation:**
+
+* Finds line with max length using `key=len`.
+* Strips and prints it with its length.
+
+---
+
+### 🔑 Bonus: Understanding `key=` Argument
+
+**`key=`** is used with `max()`, `min()`, and `sorted()` to customize how comparison is done:
+
+#### 🧮 Examples:
+
+```python
+words = ["apple", "Banana", "pear"]
+print(sorted(words, key=str.lower))  # case-insensitive
+```
+
+```python
+names = ["Sam", "Bob", "Alex"]
+print(sorted(names, key=lambda x: x[-1]))  # last char sort
+```
+
+```python
+people = [("Alice", 25), ("Bob", 20), ("Charlie", 30)]
+print(sorted(people, key=lambda x: x[1]))  # by age
+```
+
+```python
+class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+
+students = [Student("Alice", 85), Student("Bob", 92)]
+topper = max(students, key=lambda s: s.grade)
+print(topper.name)
+```
+
+---
+
+
+* Use `open()` or `with open()` to read/write files.
+* Always close files or use `with` block.
+* Use modes like `r`, `w`, `a`, `x` depending on task.
+* `key=` argument is powerful for custom sorting or filtering.
+
+📁 File handling is a **core part of real-world Python programming** — for logs, configs, saving data, backups, etc.
+
+</details>
 
