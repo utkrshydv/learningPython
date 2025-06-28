@@ -2397,3 +2397,157 @@ print(topper.name)
 
 </details>
 
+<details>
+
+ <summary> ☁️ Lab 8</summary>
+
+### 🌍 Topic: Weather API Project with Environment Variables and External Packages
+
+---
+
+### 🔌 What is an API?
+
+**API (Application Programming Interface)** allows different software systems to communicate with each other.
+
+In this lab, we use the **OpenWeatherMap API** to get live weather data for any city by making an HTTP request.
+
+```python
+https://api.openweathermap.org/data/2.5/weather
+```
+
+We attach **query parameters** like:
+
+* `q=cityname` – for city input
+* `appid=your_api_key` – unique API key (kept secret)
+* `units=metric` – temperature in Celsius
+
+---
+
+### 📦 What are Packages?
+
+**Packages** are collections of Python modules. Here, we use:
+
+* `requests` – to send HTTP requests to the weather API
+* `dotenv` – to securely manage sensitive info like the API key
+* `os` – to access environment variables
+* `pprint` – to print JSON data nicely (optional)
+
+> You install them using `pip install requests python-dotenv`
+
+---
+
+### 🧪 Example Code Walkthrough
+
+```python
+import requests
+from dotenv import load_dotenv
+import os
+from pprint import pprint
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Function to fetch current weather for user-entered city
+def get_current_weather():
+    print('\n*** Get Current Weather Conditions ***\n')
+
+    city = input("\nPlease enter a city name: ").replace(" ", "+")
+
+    request_url = f'https://api.openweathermap.org/data/2.5/weather?appid={os.getenv("API_KEY")}&q={city}&units=metric'
+
+    weather_data = requests.get(request_url).json()
+
+    print(f'\nCurrent weather for {weather_data["name"]}.')
+    print(f'\nThe temperature is  {weather_data["main"]["temp"]}.')
+    print(f'\nFeels like  {weather_data["main"]["feels_like"]} and {weather_data["weather"][0]["description"]}.')
+
+# Only run the function if this is the main file
+if __name__ == "__main__":
+    get_current_weather()
+```
+
+### 🖥️ Output:
+
+```
+Please enter a city name: Mumbai
+
+Current weather for Mumbai.
+The temperature is  30.2.
+Feels like  34.6 and haze.
+```
+
+---
+
+### 🗃️ .env File and dotenv
+
+`.env` is a simple file used to store environment variables locally.
+It is **not pushed to GitHub** to protect secrets.
+
+```dotenv
+API_KEY=your_openweathermap_api_key_here
+```
+
+* Use `load_dotenv()` to load these variables into your Python script.
+* Access them via `os.getenv("API_KEY")`
+
+---
+
+### 💻 os Module
+
+The `os` module provides access to operating system functionalities like environment variables, file paths, etc.
+
+```python
+os.getenv("API_KEY")
+```
+
+---
+
+### 🧪 Virtual Environments (`venv`)
+
+A **virtual environment** is an isolated Python environment for your project.
+It ensures that dependencies do not interfere across projects.
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+```
+
+---
+
+### 📄 `requirements.txt`
+
+This file lists all the packages your project needs.
+You generate it using:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Install packages later using:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Example:**
+
+```
+requests
+python-dotenv
+```
+
+---
+
+
+
+* ✅ Use APIs to fetch external data like weather
+* 🔐 Store secrets securely using `.env`
+* 📦 Install packages like `requests`, `dotenv`
+* 🧪 Use `venv` to manage dependencies
+* 📄 Track dependencies with `requirements.txt`
+
+---
+
+
+</details>
