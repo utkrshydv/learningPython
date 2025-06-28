@@ -1015,3 +1015,267 @@ They can include an `if…else` inside the expression for conditional output.
 * Question 3: Created a list of doubled values only for even numbers.
 * Question 4: Used a conditional expression inside a comprehension to label each number `"even"` or `"odd"`.
 </details>
+
+<details>
+
+<summary>✅ Lab 4</summary> 
+
+### 🧵 Topic: **Tuples**
+
+**Explanation:**
+A **tuple** is an ordered, immutable collection of elements. This means once a tuple is created, you cannot change, add, or remove elements from it. Tuples are used to group related data together and ensure that the grouped data stays constant.
+
+They're defined using parentheses `()` and support indexing, slicing, nesting, and unpacking.
+
+**Example:**
+
+```python
+my_tuple = (1, 2, 3, 4)
+print(my_tuple[1])  # Output: 2
+
+person = ('utkarsh', 21, 'Engineer', 'male')
+name, age, job, gender = person
+print(name, age, job, gender)
+```
+
+---
+
+### 🧵 Topic: **Tuple Unpacking**
+
+**Explanation:**
+Tuple unpacking allows you to assign each item in a tuple to a variable in a single line. The number of variables must match the number of elements in the tuple.
+
+**Example:**
+
+```python
+t2 = ('python', 3.10, True)
+lang, version, is_dynamic = t2
+print(lang)  # python
+```
+
+---
+
+### 🧵 Topic: **Singleton Tuple**
+
+**Explanation:**
+To create a tuple with only one element, you must include a trailing comma. Otherwise, Python treats it as a regular value.
+
+**Example:**
+
+```python
+t3 = (42,)  # This is a tuple
+print(type(t3))  # <class 'tuple'>
+
+not_a_tuple = (42)
+print(type(not_a_tuple))  # <class 'int'>
+```
+
+---
+
+### 🧵 Topic: **Tuple Slicing**
+
+**Explanation:**
+Just like strings and lists, tuples can be sliced to retrieve a portion of elements using the syntax `tuple[start:stop:step]`.
+
+**Example:**
+
+```python
+t = (10, 20, 30, 40, 50)
+print(t[1:4])     # (20, 30, 40)
+print(t[::-1])    # Reverses the tuple
+```
+
+---
+
+### 🧵 Topic: **Tuple Methods: `count()` and `index()`**
+
+**Explanation:**
+
+* `count(x)` → returns the number of times `x` appears in the tuple.
+* `index(x)` → returns the index of the first occurrence of `x`.
+
+**Example:**
+
+```python
+t = (3, 6, 3, 9, 3, 12)
+print(t.count(3))  # 3
+print(t.index(9))  # 3
+```
+
+---
+
+### 🧵 Topic: **Nested Tuples**
+
+**Explanation:**
+Tuples can contain other tuples or complex data types. Access elements using multiple indices.
+
+**Example:**
+
+```python
+person = ("utkarsh", (21, 'M'), ("python", "java"))
+print(person[1][0])  # 21
+print(person[2][1])  # java
+```
+
+---
+
+### 🧵 Topic: **Sets**
+
+**Explanation:**
+A set is an unordered collection of **unique** elements. Sets are used when you want to store distinct values and perform operations like union, intersection, difference, etc.
+
+**Example:**
+
+```python
+nums = {1, 2, 3, 3, 4}
+print(nums)  # {1, 2, 3, 4} – duplicates removed
+```
+
+---
+
+### 🧵 Topic: **Set Operations**
+
+**Explanation:**
+
+* `|` → Union
+* `&` → Intersection
+* `-` → Difference
+* `^` → Symmetric Difference
+
+**Example:**
+
+```python
+a = {1, 2, 3}
+b = {2, 3, 6}
+
+print(a | b)  # {1, 2, 3, 6}
+print(a & b)  # {2, 3}
+print(a - b)  # {1}
+print(a ^ b)  # {1, 6}
+```
+
+---
+
+### 🧵 Topic: **Set from String**
+
+**Explanation:**
+Converting a string to a set helps in extracting unique characters.
+
+**Example:**
+
+```python
+word = "balloon"
+unique_letters = set(word)
+print(unique_letters)  # {'b', 'a', 'l', 'o', 'n'}
+```
+
+---
+
+### 🧵 Topic: **Dictionaries**
+
+**Explanation:**
+Dictionaries store data as key-value pairs. Keys are unique, and values can be of any data type. Useful for fast lookups and organizing data meaningfully.
+
+**Example:**
+
+```python
+student = {
+    'name': 'utkarsh',
+    'age': 21,
+    'courses': ['Math', 'Science']
+}
+print(student['name'])  # utkarsh
+```
+
+---
+
+### 🧵 Topic: **Dictionary Methods: `get()`, `pop()`, `del`**
+
+**Explanation:**
+
+* `get(key)` → returns the value or `None` if the key doesn't exist.
+* `pop(key)` → removes and returns the value of the given key.
+* `del` → deletes a key-value pair from the dictionary.
+
+**Example:**
+
+```python
+student.get('email')             # None
+student.pop('grade')             # removes 'grade'
+del student['age']               # removes 'age'
+```
+
+---
+
+### 🧵 Topic: **Looping Through a Dictionary**
+
+**Explanation:**
+You can iterate over keys, values, or both using `keys()`, `values()`, or `items()`.
+
+**Example:**
+
+```python
+for key, value in student.items():
+    print(f"{key} : {value}")
+```
+
+---
+
+### 🧵 Topic: **Nested Dictionaries**
+
+**Explanation:**
+A dictionary can store another dictionary as a value. Useful for structured, grouped data.
+
+**Example:**
+
+```python
+classroom = {
+    'utkarsh': {'age': 21, 'grade': 90},
+    'disha': {'age': 32, 'grade': 100}
+}
+print(classroom['disha']['grade'])  # 100
+```
+
+---
+
+### 🧵 Topic: **Real-world Dictionary Use Cases**
+
+#### 📞 Phonebook Lookup
+
+**Explanation:**
+Get a value from a dictionary safely using `get()` to avoid errors if the key is missing.
+
+**Example:**
+
+```python
+name = input("Enter a name: ")
+print(phonebook.get(name, "Not found"))
+```
+
+#### 🍎 Inventory Update
+
+**Explanation:**
+Simulates real-time item stock updates.
+
+**Example:**
+
+```python
+inventory['banana'] -= 2
+inventory['grapes'] = 15
+```
+
+#### 🔁 Word Frequency Counter
+
+**Explanation:**
+Counts how many times each word appears in a sentence.
+
+**Example:**
+
+```python
+for word in words:
+    word_count[word] = word_count.get(word, 0) + 1
+```
+</details>
+
+
+
