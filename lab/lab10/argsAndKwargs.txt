@@ -1,0 +1,54 @@
+*args -> allows you to pass multiple non key arguments
+**kwargs -> allows you to pass multiple keyword - arguments
+
+def shipping_label(*args, **kwargs):
+    for arg in args:
+      print(arg, end =" ")
+    print()
+
+    for key, value in kwargs.items():
+      print(f"{key}: {value}")
+
+
+shipping_label("Dr", "Spongebob",  //args
+                street = "123 fake street") // kwargs
+
+
+args -> tuple ->positinal argument
+kwargs -> dictionary -> keyword argument
+
+def hello(*args, **kwargs):
+  print(args)
+  print(kwargs)
+
+
+hello("utkarsh", "yadav", age=21, dob=2005)
+
+
+//args output
+("utkarsh", "yadav")
+
+//kwargs output
+{'age' : 21, 'dob' : 2004}
+
+
+hello(*abc, **def)
+* convers to arg
+** convertsto kwargs
+
+lst = list(('utkarsh', 'yadav'))
+dict_val = {'age': 21m 'dob' : 2004}
+
+hello(lst, dict_val)
+
+here hello considers lst and dict_val both as positional argument
+
+//output of print
+(["utkarsh", "yadav"], {'age': 21, 'dob': 2004}) //tuple
+
+
+hello(*lst, **dict_val)
+
+now lst becomes positional argument
+dict_val becomes keyword argument
+
