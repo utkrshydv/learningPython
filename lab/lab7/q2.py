@@ -111,4 +111,3 @@
 # * Custom or lambda functions
 # * Attribute or element access in complex data
 
-# Would you like a small quiz to test this?
