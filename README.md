@@ -3,6 +3,15 @@
 <details>
  <summary>
  💡 Lab 1
+ 
+- Basic Input/Output & f-strings
+- Type Conversion & Addition
+- Arithmetic Operators
+- String Splitting & Multiple Assignment
+- Converting & Concatenating Numeric Strings
+- Conditional Statements
+- Calculating Percentage & Average
+
  </summary>
 
 ### **💡 Topic:** Basic Input/Output & f-strings
@@ -170,12 +179,26 @@ You can perform compound arithmetic expressions to compute percentages and avera
 * Question 7: Calculated percentage from three subject marks.
 * Question 8: Computed average of three marks and used a conditional to print pass/fail.
 
----
 </details>
+
+---
 
 <details>
  <summary>
 🎮 Lab 2
+
+ - Random Number Guessing Game using while loop
+- Basic While Loops
+- Conditional Statements (if–elif–else)
+- Finding the Largest of Three Numbers
+- Grade Classification with if–elif Ladder
+- For Loops & Even Number Check
+- Summing Digits of a Number
+- Loop Control Statements (continue & break)
+- FizzBuzz Implementation
+- Multiplication Table
+- Prime Number Checking
+- Prime Number Generation up to N
 </summary>
 
 ### **🎲 Topic:** Random Number Guessing Game
@@ -468,9 +491,28 @@ List all primes ≤ `n` by testing each candidate `i` using the same sieve-like 
 * Question 13: Printed every prime number between 2 and the user’s limit `n`.
 
 </details>
+
+---
+
 <details>
  <summary>
 🛠️ Lab 3
+
+ - Function Definition & Return Values  
+- Conditional Logic in Functions  
+- Recursive Functions  
+- Finding the Maximum of Three Values  
+- Built-in List Functions (len, sum, type)  
+- Calculating Average of a List  
+- Finding Maximum in a List (Custom vs. Built-in)  
+- Counting Even Numbers in a List  
+- List Slicing in Python  
+- List Methods (append, insert, remove, sort, reverse)  
+- Counting & Finding Elements (count, index)  
+- Copying Lists (shallow vs. deep)  
+- Removing & Extending Lists (pop, extend)  
+- Functional Tools (map & filter with lambda)  
+- List Comprehensions  
 </summary>
 
 ### **⚙️ Topic:** Function Definition & Return Values
@@ -1016,9 +1058,30 @@ They can include an `if…else` inside the expression for conditional output.
 * Question 4: Used a conditional expression inside a comprehension to label each number `"even"` or `"odd"`.
 </details>
 
+---
+
 <details>
 
-<summary>	🧮 Lab 4</summary> 
+<summary>	🧮 Lab 4
+ 
+- Tuples  
+- Tuple Unpacking  
+- Singleton Tuple  
+- Tuple Slicing  
+- Tuple Methods: count() and index()  
+- Nested Tuples  
+- Sets  
+- Set Operations (Union, Intersection, Difference, Symmetric Difference)  
+- Set from String  
+- Dictionaries  
+- Dictionary Methods: get(), pop(), del  
+- Looping Through a Dictionary  
+- Nested Dictionaries  
+- Real-world Dictionary Use Cases  
+  - Phonebook Lookup  
+  - Inventory Update  
+  - Word Frequency Counter  
+</summary> 
 
 ### 🧵 Topic: **Tuples**
 
@@ -1278,10 +1341,35 @@ for word in words:
 </details>
 
 
-
+---
 
 <details>
-<summary>🧪 Lab 5</summary>  
+<summary>🧪 Lab 5
+
+- Object-Oriented Programming (OOP) in Python  
+- Classes and Objects  
+- Constructors (__init__)  
+- Instance Methods  
+- Default Parameter Values  
+- Conditional Logic in Methods  
+- Working with Lists Inside Classes  
+- Composition (Object Inside Object)  
+- Encapsulation  
+- Inheritance  
+- super() Keyword  
+- Polymorphism via Method Overriding  
+- Class vs Instance Variables  
+- Class Methods (@classmethod)  
+- Practical OOP Examples (Library, Cart, Playlist, etc.)  
+- Multiple Inheritance  
+- Abstract Classes & Interfaces (ABC module)  
+- Interface-Like Behavior  
+- Access Modifiers (Public, Protected, Private)  
+- Polymorphism (with Loops and Abstract Base Classes)  
+- Real-life Polymorphic Examples  
+- OOP Mini Project with Abstract Base Class  
+- Class Variables & @classmethod  
+</summary>  
 
  
 ### **Topic: Object-Oriented Programming (OOP) in Python**
@@ -1733,13 +1821,21 @@ class Developer(Employee):
 
 
 
----
-
 
 </details>
 
+---
+
 <details>
-<summary> 🪄Lab 6</summary>
+<summary> 🪄Lab 6
+
+- Dunder (Magic) Methods in Python  
+- Object Initialization & Representation – `__init__`, `__str__`, `__repr__`
+- Operator Overloading – `__eq__`, `__add__`, `__lt__`
+- Collection-Like Behavior – `__len__`, `__getitem__`, `__setitem__`, `__contains__`
+- Callable Objects – `__call__`
+- Full Custom Class Example – `TaskManager` using multiple dunder methods
+</summary>
 
 ### 🧵 Topic: Dunder (Magic) Methods in Python
 
@@ -2073,9 +2169,26 @@ task manager : {'laundry': 'Wash clothes', 'study': 'Python OOP'}
 Each dunder method customizes specific behavior and interaction of objects with Python syntax and built-in operations. Understanding and using them allows you to design more intuitive and powerful custom classes.
 </details>
 
+---
+
 <details>
 
- <summary> 📂 Lab 7</summary>
+ <summary> 📂 Lab 7
+
+ ## ✅ Topics Covered – Lab 7
+
+- File Handling Basics (`open()`, `with`, file modes)
+- Reading Files (`.read()`, `.readline()`, loops)
+- Writing & Appending (`.write()`, `.writelines()`)
+- Creating & Deleting Files (`os.path.exists()`, `os.remove()`)
+- Copying Content Between Files
+- Line Operations (count lines, first/last line, longest line)
+- Word Search & Frequency (`in`, `.count()`)
+- Multiline Text & String Lists
+- Sorting with `key=` (lambda, str.lower, object attributes)
+
+ 
+ </summary>
 
 ### 🗂️ Topic: File Handling in Python
 
@@ -2397,9 +2510,21 @@ print(topper.name)
 
 </details>
 
+---
+
 <details>
 
- <summary> ☁️ Lab 8</summary>
+ <summary> ☁️ Lab 8
+
+ - APIs & HTTP Requests (`requests`, query parameters, JSON)
+- Using OpenWeatherMap API to fetch live weather
+- Secure API Keys using `.env` file & `dotenv`
+- Accessing Environment Variables with `os.getenv()`
+- Pretty Printing JSON with `pprint` (optional)
+- Creating & Activating Virtual Environments (`venv`)
+- Managing Dependencies with `requirements.txt`
+ 
+ </summary>
 
 ### 🌍 Topic: Weather API Project with Environment Variables and External Packages
 
@@ -2547,13 +2672,26 @@ python-dotenv
 * 🧪 Use `venv` to manage dependencies
 * 📄 Track dependencies with `requirements.txt`
 
----
 
 
 </details>
 
+---
+
 <details>
- <summary>🌤️ Lab 9</summary>
+ <summary>🌤️ Lab 9
+ 
+ - Flask Web App Structure – `app`, routes, templates, `render_template()`
+- API Integration – using `requests` to fetch weather data
+- Secure API Keys – `.env` file, `load_dotenv()`, `os.getenv()`
+- URL Query Handling – `request.args.get("city")`
+- Dynamic Templates – Jinja2 placeholders (`{{ }}`), conditional rendering
+- Production Server – `waitress.serve()` for deployment
+- Frontend Integration – HTML form for input, CSS via `url_for('static', ...)`
+- Virtual Environments – `venv`, activation, isolation
+- Dependency Management – `requirements.txt`
+- f-string Formatting – precision, alignment, thousands separator
+ </summary>
 
 ### 🌤️ Topic: Weather API Web App using Flask
 ---
@@ -2803,13 +2941,22 @@ f"{1234.56789:>10,.2f}"  # ➜ '  1,234.57'
 | `requirements.txt` | Track project dependencies for setup          |
 | `venv`             | Create isolated Python environments           |
 
----
+
 
 
 </details>
 
+---
+
 <details>
-<summary>⚙️ Lab 10 </summary> 
+<summary>⚙️ Lab 10 
+
+- Generators – `yield`, generator functions, generator expressions
+- Iterators – `__iter__()`, `__next__()`, `StopIteration`
+- Modules & Import Styles – `math`, `statistics`, `random`, `from ... import ...`
+- *args and **kwargs – variable-length positional & keyword arguments
+- Decorators – function wrapping with `@decorator`, logging use case
+</summary> 
 
 ### ⚙️ Topic: Generators, Iterators, Modules, *args, \*\*kwargs, Decorators
 
