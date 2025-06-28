@@ -1279,3 +1279,464 @@ for word in words:
 
 
 
+
+<details>
+<summary>🧪 Lab 5</summary>  
+
+ 
+### **Topic: Object-Oriented Programming (OOP) in Python**
+
+
+### 🧵 Topic: **Classes and Objects**
+
+**Explanation:**  
+A **class** is a blueprint for creating objects. It defines attributes (variables) and methods (functions) that its instances (objects) will have. Objects are instances of a class and represent real-world entities.
+
+**Example:**
+```python
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"My name is {self.name} and I'm {self.age} years old")
+
+s1 = Student("utkarsh", 21)
+s1.introduce()
+````
+
+---
+
+### 🧵 Topic: **Constructors (`__init__`)**
+
+**Explanation:**
+The `__init__` method is automatically called when a new object is created. It initializes the object’s attributes.
+
+**Example:**
+
+```python
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+```
+
+---
+
+### 🧵 Topic: **Instance Methods**
+
+**Explanation:**
+Instance methods operate on the data stored in an object. They’re defined inside a class and use `self` to access instance variables.
+
+**Example:**
+
+```python
+class Account:
+    def display(self):
+        print(f"owner: {self.owner}, balance: {self.balance}")
+```
+
+---
+
+### 🧵 Topic: **Default Parameter Values**
+
+**Explanation:**
+Default values in constructors let you make parameters optional when creating objects.
+
+**Example:**
+
+```python
+class Person:
+    def __init__(self, name, city="unknown"):
+        self.name = name
+        self.city = city
+```
+
+---
+
+### 🧵 Topic: **Conditional Logic in Methods**
+
+**Explanation:**
+Methods can include logic such as validations or branching. For example, checking if balance is sufficient before withdrawing.
+
+**Example:**
+
+```python
+def withdraw(self, amount):
+    if amount > self.balance:
+        print("insufficient balance")
+    else:
+        self.balance -= amount
+```
+
+---
+
+### 🧵 Topic: **Working with Lists Inside Classes**
+
+**Explanation:**
+Objects can have attributes that are lists to store multiple items, such as grades or products.
+
+**Example:**
+
+```python
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.grade = []
+
+    def add_grade(self, grade):
+        self.grade.append(grade)
+
+    def average(self):
+        return sum(self.grade)/len(self.grade)
+```
+
+---
+
+### 🧵 Topic: **Composition: Object Inside Object**
+
+**Explanation:**
+Composition is when a class contains instances of other classes. Useful for building real-world relationships like Library → Book.
+
+**Example:**
+
+```python
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+```
+
+---
+
+### 🧵 Topic: **Encapsulation**
+
+**Explanation:**
+Encapsulation groups data and methods that operate on that data into one unit — the class. It helps keep the internal details hidden and only exposes necessary functionality.
+
+---
+
+### 🧵 Topic: **Inheritance**
+
+**Explanation:**
+Inheritance lets one class (child) inherit the properties and methods of another class (parent). It enables code reuse and establishes a hierarchy.
+
+**Example:**
+
+```python
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} says Woof")
+```
+
+---
+
+### 🧵 Topic: **`super()` Keyword**
+
+**Explanation:**
+`super()` allows access to methods and properties of a parent class from within a child class. Often used to call the parent’s `__init__` method.
+
+**Example:**
+
+```python
+class Car(Vehicle):
+    def __init__(self, brand, year, model):
+        super().__init__(brand, year)
+        self.model = model
+```
+
+---
+
+### 🧵 Topic: **Polymorphism via Method Overriding**
+
+**Explanation:**
+Polymorphism allows different classes to define methods with the same name but different behavior. Method overriding customizes inherited methods.
+
+**Example:**
+
+```python
+class Rectangle(Shape):
+    def area(self):
+        return self.length * self.breadth
+```
+
+---
+
+### 🧵 Topic: **Class vs Instance Variables**
+
+**Explanation:**
+
+* **Instance variables** (like `self.name`) are unique to each object.
+* **Class variables** (like `species`) are shared across all instances of the class.
+
+**Example:**
+
+```python
+class Dog:
+    species = "Canis Familiaris"  # Class variable
+
+    def __init__(self, name, age):
+        self.name = name           # Instance variable
+```
+
+---
+
+### 🧵 Topic: **Class Methods**
+
+**Explanation:**
+Class methods use the `@classmethod` decorator and receive the class as the first argument (`cls`). They're used to access or modify class-level data.
+
+**Example:**
+
+```python
+class Counter:
+    counter = 0
+
+    @classmethod
+    def get_total(cls):
+        print(cls.counter)
+```
+
+---
+
+### 🧵 Topic: **Practical OOP Examples**
+
+**Explanation:**
+These examples implement real-life use cases using OOP concepts like classes, composition, and inheritance.
+
+**Example:**
+
+```python
+# Library and Book
+lib.add_book(Book("1984", "George Orwell"))
+lib.borrow_book("1984")
+
+# Cart and Product
+cart.add_product(Product("T-shirt", 20.0))
+print(cart.total_price())
+
+# Movie and MovieCollection
+collection.find_by_director("Christopher Nolan")
+
+# Playlist and Song
+my_playlist.play_all()
+my_playlist.remove_song("Bohemian Rhapsody")
+
+# SavingsAccount (extends Account)
+a1 = SavingsAccount("utkarsh", 1000, 7)
+a1.apply_interest()
+```
+
+### 🧵 Topic: **Multiple Inheritance**
+
+**Explanation:**  
+Multiple inheritance allows a class to inherit from more than one parent class. Python resolves method calls using **Method Resolution Order (MRO)** — left to right in the class declaration.
+
+**Example:**
+```python
+class A:
+    def greet(self):
+        print("Hello from A")
+
+class B:
+    def greet(self):
+        print("Hello from B")
+
+class C(A, B):
+    pass
+
+c = C()
+c.greet()   # Output: Hello from A
+print(C.mro())
+````
+
+---
+
+### 🧵 Topic: **Abstract Classes & Interfaces (ABC module)**
+
+**Explanation:**
+Abstract classes are base classes that **cannot be instantiated** and must be inherited.
+They contain **abstract methods** (methods with no implementation) using the `@abstractmethod` decorator.
+
+**Example:**
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def area(self):
+        print("Area of circle")
+
+# shape = Shape()  ❌ Error
+```
+
+---
+
+### 🧵 Topic: **Interface-Like Behavior**
+
+**Explanation:**
+When a class only defines abstract methods, it behaves like an interface — forcing derived classes to implement all declared behaviors.
+
+**Example:**
+
+```python
+class Vehicle(ABC):
+    @abstractmethod
+    def start_engine(self): pass
+
+class Car(Vehicle):
+    def start_engine(self):
+        print("car starts")
+```
+
+---
+
+### 🧵 Topic: **Encapsulation**
+
+**Explanation:**
+Encapsulation means **restricting access** to internal variables and methods.
+
+* `_var` → **protected** (convention)
+* `__var` → **private** (name mangled)
+
+**Example:**
+
+```python
+class Person:
+    def __init__(self):
+        self.name = "alex"       # public
+        self._hobby = "reading"  # protected
+        self.__salary = 50000    # private
+
+    def get_salary(self):
+        return self.__salary
+```
+
+---
+
+### 🧵 Topic: **Polymorphism**
+
+**Explanation:**
+Polymorphism allows different classes to implement the same method in different ways. It works via:
+
+* Method overriding
+* Common interface usage (e.g., iterating over different objects with the same method name)
+
+**Example:**
+
+```python
+class Dog:
+    def make_sound(self):
+        print("woof")
+
+class Cat:
+    def make_sound(self):
+        print("meow")
+
+for animal in [Dog(), Cat()]:
+    animal.make_sound()
+```
+
+---
+
+### 🧵 Topic: **Real-life Polymorphic Examples**
+
+**Explanation:**
+Polymorphism is especially useful when using abstract base classes or unified method calls for different child classes.
+
+**Example:**
+
+```python
+class Employee:
+    def work(self):
+        print("employee is working")
+
+class Developer(Employee):
+    def work(self):
+        print("Developer is coding")
+
+class Designer(Employee):
+    def work(self):
+        print("Designer is sketching")
+
+for emp in [Employee(), Developer(), Designer()]:
+    emp.work()
+```
+
+---
+
+### 🧵 Topic: **OOP Mini Project with Abstract Base Class**
+
+**Explanation:**
+Using `ABC` and `@abstractmethod`, you can create a structured system where each class must define required behavior, like a login system or user management.
+
+**Example:**
+
+```python
+class User(ABC):
+    @abstractmethod
+    def login(self): pass
+
+class Student(User):
+    def login(self):
+        print("Student logged in")
+```
+
+---
+
+### 🧵 Topic: **Class Variables & `@classmethod`**
+
+**Explanation:**
+
+* **Class variables** are shared across all instances.
+* `@classmethod` is used to access or modify class-level variables or behavior.
+
+**Example:**
+
+```python
+class Employee(ABC):
+    employee_count = 0
+
+    @classmethod
+    def display_count(cls):
+        print(cls.employee_count)
+
+class Developer(Employee):
+    def __init__(self, name):
+        self.name = name
+        Employee.employee_count += 1
+```
+
+---
+
+### 🧵 Topic: **Summary of OOP Concepts Used**
+
+| Concept                   | Used In                                                |
+| ------------------------- | ------------------------------------------------------ |
+| Classes & Objects         | `Student`, `Book`, `Account`, etc.                     |
+| Inheritance               | `Dog(Animal)`, `Car(Vehicle)`, etc.                    |
+| Method Overriding         | `Car.show_info()`, `Developer.work()`                  |
+| Encapsulation             | Private/protected attributes like `__salary`, `_marks` |
+| Polymorphism              | Loops calling `.work()` on various classes             |
+| Abstract Classes          | `Shape`, `MediaFile`, `Employee`                       |
+| Multiple Inheritance      | `Robot(Speaker, Mover)`                                |
+| Composition               | `Library` contains multiple `Book`                     |
+| Class Methods & Variables | `Employee.display_count()`, `Book.total_revenue`       |
+
+
+
+---
+
+
+</details>
+
+
+
